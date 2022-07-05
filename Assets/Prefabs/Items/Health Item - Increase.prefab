@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fac439da5f264a4bb561638c3ca8498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trailParticle: {fileID: 0}
+  trailParticle: {fileID: 1113972268356879538, guid: a6505f77f7fb7e4468eeb7b8364c305c, type: 3}
   trailLerpSpeed: 5
   healthAmount: 1
 --- !u!1001 &2816901182634283001

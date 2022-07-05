@@ -14,20 +14,19 @@ public class Item : MonoBehaviour
         alliedMonster = FindObjectOfType<AlliedMonster>();
     }
 
-    private void Update()
-    {
-        if (currentTrail)
-            currentTrail.transform.position = Vector3.Lerp(transform.position, alliedMonster.transform.position, Time.deltaTime * trailLerpSpeed);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         OnTrigger();
 
         if (trailParticle)
+        {
             currentTrail = Instantiate(trailParticle, transform.position, transform.rotation, null);
+            var trail = currentTrail.AddComponent<ItemTrailParticle>();
+            trail.SetSpeed(trailLerpSpeed);
+            trail.SetTarget(alliedMonster.transform);
+        }
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     public virtual void OnTrigger() { }
