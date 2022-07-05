@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LinearController : MonoBehaviour
+public class LinearMovement : MonoBehaviour
 {
     public GameObject startPosition;
     public GameObject endPosition;

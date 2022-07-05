@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db4ad9236943fe40b5cbf98b4039766, type: 3}
+  m_Name: ControlPanel
+  m_EditorClassIdentifier: 
+  items:
+  - type: 0
+    positivePrefab: {fileID: 2201766010466877249, guid: 8fcdc90a3ab6b1a4688a2edd15eac5a0, type: 3}
+    negativePrefab: {fileID: 4484313586652056568, guid: 2293db10aa07ab04cbe9b3760b4cd6a7, type: 3}
+  - type: 1
+    positivePrefab: {fileID: 6514739121977073959, guid: b6b305eb3b29a8f48a0408daa6519c15, type: 3}
+    negativePrefab: {fileID: 4375183946840063770, guid: f88b4505048584f479b0492dac5b0a13, type: 3}
+  - type: 2
+    positivePrefab: {fileID: 5062626062158078812, guid: e453e4434fea3054fa733acd028e5fea, type: 3}
+    negativePrefab: {fileID: 6816912767302868056, guid: 059747d416240cb459a2a0882553410c, type: 3}
+  - type: 3
+    positivePrefab: {fileID: 5493385151742017824, guid: 5db1b945829d878438466294af43bbfc, type: 3}
+    negativePrefab: {fileID: 2831756996398776655, guid: 335ff4c14d04f6141a81278a34fae7f3, type: 3}
+  - type: 4
+    positivePrefab: {fileID: 4800928694221415207, guid: 5d068bfb4f49d2a42b20bad32892fec5, type: 3}
+    negativePrefab: {fileID: 8520387084728777455, guid: 3aa6ccc8bf167b343935f3609b422ad4, type: 3}

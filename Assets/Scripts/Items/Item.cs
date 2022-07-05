@@ -16,14 +16,18 @@ public class Item : MonoBehaviour
 
     private void Update()
     {
-        currentTrail.transform.position = Vector3.Lerp(transform.position, alliedMonster.transform.position, Time.deltaTime * trailLerpSpeed);
+        if (currentTrail)
+            currentTrail.transform.position = Vector3.Lerp(transform.position, alliedMonster.transform.position, Time.deltaTime * trailLerpSpeed);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         OnTrigger();
-        currentTrail = Instantiate(trailParticle, transform.position, transform.rotation, null);
-        Destroy(gameObject);
+
+        if (trailParticle)
+            currentTrail = Instantiate(trailParticle, transform.position, transform.rotation, null);
+
+        gameObject.SetActive(false);
     }
 
     public virtual void OnTrigger() { }

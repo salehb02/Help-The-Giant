@@ -1,0 +1,1 @@
+public enum ItemStatue { Positive, Negative }
