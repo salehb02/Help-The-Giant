@@ -1,35 +1,36 @@
+using System.Collections;
 using UnityEngine;
 
-public class AlliedMonster : MonoBehaviour
+public class AlliedMonster : Monster
 {
-    public float Health { get; private set; }
-    public float Power { get; private set; }
-    public float AttackSpeed { get; private set; }
-    public float Shield { get; private set; }
+    public float baseAttackDelay;
+    private Animator animator;
+    private Monster enemyMonster;
 
-    public void ChangeHealth(float amount)
+    public const string ATTACK_TRIGGER = "Attack";
+
+    public override void Init()
     {
-        Health += amount;
+        base.Init();
+
+        enemyMonster = FindObjectOfType<EnemyMonster>();
+        animator = GetComponentInChildren<Animator>();
+
+        StartCoroutine(AttackCoroutine());
     }
 
-    public void ChangePower(float amount)
+    private IEnumerator AttackCoroutine()
     {
-        Power += amount;
-    }
+        while (!IsDead())
+        {
+            animator?.SetTrigger(ATTACK_TRIGGER);
 
-    public void ChangeAttackSpeed(float amount)
-    {
-        AttackSpeed += amount;
-    }
+            if (enemyMonster)
+            {
+                enemyMonster.Damage(Power);
+            }
 
-    public void ChangeShield(float amount)
-    {
-        Shield += amount;
-        Shield = Mathf.Clamp(Shield, 1, 3);
-    }
-
-    public void ChangeDNA()
-    {
-
+            yield return new WaitForSeconds(baseAttackDelay / AttackSpeed);
+        }
     }
 }

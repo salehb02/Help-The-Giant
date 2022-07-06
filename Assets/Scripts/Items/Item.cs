@@ -7,26 +7,43 @@ public class Item : MonoBehaviour
     public float trailLerpSpeed = 5f;
 
     internal AlliedMonster alliedMonster;
-    private GameObject currentTrail;
+    private bool throwItem = false;
+    private Vector3 initPos;
+    private float progression;
+
 
     private void Start()
     {
         alliedMonster = FindObjectOfType<AlliedMonster>();
+        initPos = transform.position;
+    }
+
+    private void Update()
+    {
+        if (throwItem)
+        {
+            progression += Time.deltaTime * trailLerpSpeed / 10f;
+            transform.position = Vector3.Lerp(initPos, alliedMonster.transform.position, progression);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        OnTrigger();
-
-        if (trailParticle)
+        if (other.gameObject.layer == LayerMask.NameToLayer(GameManager.PlayerLayer))
         {
-            currentTrail = Instantiate(trailParticle, transform.position, transform.rotation, null);
-            var trail = currentTrail.AddComponent<ItemTrailParticle>();
-            trail.SetSpeed(trailLerpSpeed);
-            trail.SetTarget(alliedMonster.transform);
+            if (trailParticle)
+            {
+                Instantiate(trailParticle, transform.position, transform.rotation, transform);
+            }
+
+            throwItem = true;
         }
 
-        Destroy(gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer(GameManager.MonsterLayer))
+        {
+            OnTrigger();
+            Destroy(gameObject);
+        }
     }
 
     public virtual void OnTrigger() { }

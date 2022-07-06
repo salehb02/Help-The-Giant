@@ -11,7 +11,7 @@ public class SimpleRotation : MonoBehaviour
 
     private void Start()
     {
-        _initPos = transform.position;
+        _initPos = transform.localPosition;
     }
 
     private void Update()
@@ -26,6 +26,6 @@ public class SimpleRotation : MonoBehaviour
         if (!sinusMovement)
             return;
 
-        transform.position = _initPos + (Vector3.up * Mathf.Sin(sinusMovementSpeed * Time.time) * sinusMovementMultiplier);
+        transform.localPosition = _initPos + (Vector3.up * Mathf.Sin(sinusMovementSpeed * Time.time) * sinusMovementMultiplier);
     }
 }
