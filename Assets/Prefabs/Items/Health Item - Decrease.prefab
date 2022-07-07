@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 446611252279760798}
   - component: {fileID: 2630201300973478648}
   - component: {fileID: 5412791590613371036}
-  - component: {fileID: 2831756996398776655}
+  - component: {fileID: 1723482184845850070}
   m_Layer: 0
   m_Name: Health Item - Decrease
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2831756996398776655
+--- !u!114 &1723482184845850070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,12 +107,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7548890616921926614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fac439da5f264a4bb561638c3ca8498, type: 3}
+  m_Script: {fileID: 11500000, guid: e9353500fea41e842990f7cfce431a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trailParticle: {fileID: 5201720511701185914, guid: 13d776b542c8dbe4dbac6501aefeb3c2, type: 3}
-  trailLerpSpeed: 10
-  healthAmount: -1
+  trailLerpSpeed: 5
+  itemType: 3
+  itemChangeAmount: -5
 --- !u!1001 &3490398639839756947
 PrefabInstance:
   m_ObjectHideFlags: 0

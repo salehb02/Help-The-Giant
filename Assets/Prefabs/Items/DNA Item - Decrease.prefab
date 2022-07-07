@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3795510931432991119}
   - component: {fileID: 5617420819757359079}
   - component: {fileID: 8437470226864997835}
-  - component: {fileID: 6816912767302868056}
+  - component: {fileID: -2649829783266644469}
   m_Layer: 0
   m_Name: DNA Item - Decrease
   m_TagString: Untagged
@@ -196,7 +196,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6816912767302868056
+--- !u!114 &-2649829783266644469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,9 +205,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7746727456952659582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975d7fcda899abd40b7e1c4f53f4a925, type: 3}
+  m_Script: {fileID: 11500000, guid: e9353500fea41e842990f7cfce431a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trailParticle: {fileID: 5201720511701185914, guid: 13d776b542c8dbe4dbac6501aefeb3c2, type: 3}
-  trailLerpSpeed: 10
-  attackSpeedAmount: 1
+  trailLerpSpeed: 5
+  itemType: 2
+  itemChangeAmount: -1

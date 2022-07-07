@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [Header("Main Settings")]
     public GameObject trailParticle;
     public float trailLerpSpeed = 5f;
+    [Space(2)]
+    public ItemType itemType;
+    public float itemChangeAmount;
 
-    internal AlliedMonster alliedMonster;
+    internal Monster alliedMonster;
     private bool throwItem = false;
     private Vector3 initPos;
     private float progression;
@@ -14,7 +16,10 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        alliedMonster = FindObjectOfType<AlliedMonster>();
+        foreach(var monster in FindObjectsOfType<Monster>())
+            if(monster.allied)
+                alliedMonster = monster;
+
         initPos = transform.position;
     }
 
@@ -46,5 +51,27 @@ public class Item : MonoBehaviour
         }
     }
 
-    public virtual void OnTrigger() { }
+    public void OnTrigger()
+    {
+        switch (itemType)
+        {
+            case ItemType.Power:
+                alliedMonster.ChangePower(itemChangeAmount);
+                break;
+            case ItemType.AttackSpeed:
+                alliedMonster.ChangeAttackSpeed(itemChangeAmount);
+                break;
+            case ItemType.DNA:
+                alliedMonster.ChangeDNA();
+                break;
+            case ItemType.Health:
+                alliedMonster.ChangeHealth(itemChangeAmount);
+                break;
+            case ItemType.Shield:
+                alliedMonster.ChangeShield(itemChangeAmount);
+                break;
+            default:
+                break;
+        }
+    }
 }

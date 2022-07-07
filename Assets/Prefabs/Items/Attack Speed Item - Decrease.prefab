@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3719985669857850553}
   - component: {fileID: 6977582381322894177}
   - component: {fileID: 5624887750642185887}
-  - component: {fileID: 4375183946840063770}
+  - component: {fileID: 6277603288333401484}
   m_Layer: 0
   m_Name: Attack Speed Item - Decrease
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4375183946840063770
+--- !u!114 &6277603288333401484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,12 +107,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2392680140096259052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259b39546433e6e42accfc03bc9dbb0e, type: 3}
+  m_Script: {fileID: 11500000, guid: e9353500fea41e842990f7cfce431a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trailParticle: {fileID: 5201720511701185914, guid: 13d776b542c8dbe4dbac6501aefeb3c2, type: 3}
-  trailLerpSpeed: 10
-  attackSpeedAmount: -0.3
+  trailLerpSpeed: 5
+  itemType: 1
+  itemChangeAmount: -0.3
 --- !u!1001 &8055245403953357864
 PrefabInstance:
   m_ObjectHideFlags: 0

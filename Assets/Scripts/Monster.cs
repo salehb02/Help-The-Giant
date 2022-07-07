@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
+    public bool allied;
+
     [VectorLabels("Min", "Max", "Default")]
     public Vector3 health = new Vector3(0, 100, 100);
     [VectorLabels("Min", "Max", "Default")]
@@ -14,12 +17,13 @@ public class Monster : MonoBehaviour
     [VectorLabels("Min", "Max", "Default")]
     public Vector3 shield = new Vector3(0, 5, 0);
 
+    [Header("UI")]
+    public Slider healthBar;
+
     public float Health { get; private set; }
     public float Power { get; private set; }
     public float AttackSpeed { get; private set; }
     public float Shield { get; private set; }
-
-    public event Action OnDamage;
 
     private bool dead;
 
@@ -27,13 +31,22 @@ public class Monster : MonoBehaviour
     public const string DEAD_TRIGGER = "Dead";
     public const string ATTACK_SPEED = "AttackSpeed";
 
+    private Animator animator;
+    private Monster enemyMonster;
+
     private void Start()
     {
         Init();
     }
 
-    public virtual void Init()
+    public void Init()
     {
+        animator = GetComponentInChildren<Animator>();
+
+        foreach (var monster in FindObjectsOfType<Monster>())
+            if (monster != this)
+                enemyMonster = monster;
+
         InitHealth();
         InitPower();
         InitAttackSpeed();
@@ -44,35 +57,47 @@ public class Monster : MonoBehaviour
 
     private IEnumerator CheckAttackCoroutine()
     {
-        while(IsDead() == false)
+        while (IsDead() == false)
         {
-            Attack();
-
             yield return new WaitForSeconds(baseAttackDelay / AttackSpeed);
+            Attack();
         }
     }
 
-    public virtual void Attack()
+    public void Attack()
     {
+        if (enemyMonster && enemyMonster.IsDead())
+            return;
 
+        animator?.SetFloat(ATTACK_SPEED, AttackSpeed);
+        animator?.SetTrigger(ATTACK_TRIGGER);
+
+        if (enemyMonster)
+            enemyMonster.Damage(Power);
     }
 
     public void Damage(float amount)
     {
         Health -= amount;
+        UpdateUI();
 
         if (Health <= 0)
             Die();
-
-        OnDamage?.Invoke();
     }
 
-    public virtual void Die()
+    public void Die()
     {
         if (dead)
             return;
 
         dead = true;
+        animator?.SetTrigger(DEAD_TRIGGER);
+        healthBar.gameObject.SetActive(false);
+    }
+
+    private void UpdateUI()
+    {
+        healthBar.value = Health;
     }
 
     public bool IsDead() => dead;
@@ -80,6 +105,10 @@ public class Monster : MonoBehaviour
     private void InitHealth()
     {
         Health = health.z;
+
+        healthBar.minValue = health.x;
+        healthBar.maxValue = health.y;
+        UpdateUI();
     }
 
     private void InitPower()
@@ -101,6 +130,7 @@ public class Monster : MonoBehaviour
     {
         Health += amount;
         Health = Mathf.Clamp(Health, health.x, health.y);
+        UpdateUI();
     }
 
     public void ChangePower(float amount)

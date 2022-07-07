@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4800928694221415204}
   - component: {fileID: 4800928694221415205}
   - component: {fileID: 4800928694221415206}
-  - component: {fileID: 4800928694221415207}
+  - component: {fileID: -2066558652946539435}
   m_Layer: 0
   m_Name: Shield Item - Increase
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4800928694221415207
+--- !u!114 &-2066558652946539435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,12 +107,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4800928694221415200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59a12052ddda9cc408aa1193b4b3dac7, type: 3}
+  m_Script: {fileID: 11500000, guid: e9353500fea41e842990f7cfce431a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trailParticle: {fileID: 1113972268356879538, guid: a6505f77f7fb7e4468eeb7b8364c305c, type: 3}
-  trailLerpSpeed: 10
-  shieldAmount: 0.5
+  trailLerpSpeed: 5
+  itemType: 4
+  itemChangeAmount: 1
 --- !u!1 &4800928695635378303
 GameObject:
   m_ObjectHideFlags: 0

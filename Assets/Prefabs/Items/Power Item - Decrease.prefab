@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 956575622656879374}
   - component: {fileID: 7849289817327952204}
   - component: {fileID: 6491781068456721067}
-  - component: {fileID: 4484313586652056568}
+  - component: {fileID: 423617624548772835}
   m_Layer: 0
   m_Name: Power Item - Decrease
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4484313586652056568
+--- !u!114 &423617624548772835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,12 +107,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4848209360695959920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43593b35db25e0a4eabf865a0eccf4bc, type: 3}
+  m_Script: {fileID: 11500000, guid: e9353500fea41e842990f7cfce431a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trailParticle: {fileID: 5201720511701185914, guid: 13d776b542c8dbe4dbac6501aefeb3c2, type: 3}
-  trailLerpSpeed: 10
-  powerAmount: -1
+  trailLerpSpeed: 5
+  itemType: 0
+  itemChangeAmount: -3
 --- !u!1001 &8826569540659910317
 PrefabInstance:
   m_ObjectHideFlags: 0
