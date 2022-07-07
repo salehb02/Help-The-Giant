@@ -78,7 +78,7 @@ public class Monster : MonoBehaviour
 
     public void Damage(float amount)
     {
-        Health -= amount;
+        Health -= amount / Mathf.Clamp(Shield, 1, Mathf.Infinity);
         UpdateUI();
 
         if (Health <= 0)
@@ -131,6 +131,9 @@ public class Monster : MonoBehaviour
         Health += amount;
         Health = Mathf.Clamp(Health, health.x, health.y);
         UpdateUI();
+
+        if (Health <= 0)
+            Die();
     }
 
     public void ChangePower(float amount)
