@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailParticle: {fileID: 1113972268356879538, guid: a6505f77f7fb7e4468eeb7b8364c305c, type: 3}
-  trailLerpSpeed: 5
+  trailLerpSpeed: 10
   shieldAmount: 0.5
 --- !u!1 &4800928695635378303
 GameObject:
