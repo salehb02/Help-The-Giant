@@ -1,13 +1,13 @@
-using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AlliedMonster : Monster
 {
-    public float baseAttackDelay;
     private Animator animator;
     private Monster enemyMonster;
 
-    public const string ATTACK_TRIGGER = "Attack";
+    [Header("UI")]
+    public Slider healthBar;
 
     public override void Init()
     {
@@ -16,21 +16,42 @@ public class AlliedMonster : Monster
         enemyMonster = FindObjectOfType<EnemyMonster>();
         animator = GetComponentInChildren<Animator>();
 
-        StartCoroutine(AttackCoroutine());
+        healthBar.minValue = health.x;
+        healthBar.maxValue = health.y;
+        healthBar.value = Health;
+
+        OnDamage += OnDamageDone;
     }
 
-    private IEnumerator AttackCoroutine()
+    private void OnDisable()
     {
-        while (!IsDead())
-        {
-            animator?.SetTrigger(ATTACK_TRIGGER);
+        OnDamage -= OnDamageDone;
+    }
 
-            if (enemyMonster)
-            {
-                enemyMonster.Damage(Power);
-            }
+    private void OnDamageDone()
+    {
+        healthBar.value = Health;
+    }
 
-            yield return new WaitForSeconds(baseAttackDelay / AttackSpeed);
-        }
+    public override void Attack()
+    {
+        base.Attack();
+
+        if (enemyMonster && enemyMonster.IsDead())
+            return;
+
+        animator?.SetFloat(ATTACK_SPEED, AttackSpeed);
+        animator?.SetTrigger(ATTACK_TRIGGER);
+
+        if (enemyMonster)
+            enemyMonster.Damage(Power);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+
+        animator?.SetTrigger(DEAD_TRIGGER);
+        healthBar.gameObject.SetActive(false);
     }
 }
