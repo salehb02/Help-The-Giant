@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -59,13 +60,13 @@ public class Item : MonoBehaviour
                 alliedMonster.ChangePower(itemChangeAmount);
                 break;
             case ItemType.AttackSpeed:
-                alliedMonster.ChangeAttackSpeed(itemChangeAmount);
+                alliedMonster.ChangeAttackSpeed(itemChangeAmount, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
                 break;
             case ItemType.DNA:
                 alliedMonster.ChangeDNA();
                 break;
             case ItemType.Health:
-                alliedMonster.ChangeHealth(itemChangeAmount);
+                alliedMonster.ChangeHealth(itemChangeAmount, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
                 break;
             case ItemType.Shield:
                 alliedMonster.ChangeShield(itemChangeAmount);

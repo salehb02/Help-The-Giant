@@ -11,6 +11,15 @@ public class ControlPanel : ScriptableObject
         public ItemType type;
         public Item positivePrefab;
         public Item negativePrefab;
+
+        [Header("Outline Settings")]
+        [Space(2)]
+        public Color positiveOutline = Color.green;
+        public Color negativeOutline = Color.red;
+
+        [Header("Particle Effect")]
+        [Space(2)]
+        public GameObject particleVFX;
     }
 
     #region Singleton

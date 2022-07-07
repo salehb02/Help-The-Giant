@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using EPOOutline;
+using DG.Tweening;
 
 public class Monster : MonoBehaviour
 {
@@ -26,6 +28,7 @@ public class Monster : MonoBehaviour
     public float Shield { get; private set; }
 
     private bool dead;
+    private Vector3 initScale;
 
     public const string ATTACK_TRIGGER = "Attack";
     public const string DEAD_TRIGGER = "Dead";
@@ -33,6 +36,7 @@ public class Monster : MonoBehaviour
 
     private Animator animator;
     private Monster enemyMonster;
+    private Outlinable outline;
 
     private void Start()
     {
@@ -42,6 +46,9 @@ public class Monster : MonoBehaviour
     public void Init()
     {
         animator = GetComponentInChildren<Animator>();
+        outline = GetComponentInChildren<Outlinable>();
+
+        initScale = animator.transform.localScale;
 
         foreach (var monster in FindObjectsOfType<Monster>())
             if (monster != this)
@@ -53,14 +60,24 @@ public class Monster : MonoBehaviour
         InitShield();
 
         StartCoroutine(CheckAttackCoroutine());
+
+        if(allied)
+        {
+            outline.OutlineParameters.DOFade(0, 0);
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
+        }
     }
 
     private IEnumerator CheckAttackCoroutine()
     {
+        // Warm up
+        yield return new WaitForSeconds(0.5f);
+
         while (IsDead() == false)
         {
-            yield return new WaitForSeconds(baseAttackDelay / AttackSpeed);
             Attack();
+
+            yield return new WaitForSeconds(baseAttackDelay / AttackSpeed);
         }
     }
 
@@ -126,7 +143,7 @@ public class Monster : MonoBehaviour
         Shield = shield.z;
     }
 
-    public void ChangeHealth(float amount)
+    public void ChangeHealth(float amount,ControlPanel.ItemClass itemData)
     {
         Health += amount;
         Health = Mathf.Clamp(Health, health.x, health.y);
@@ -134,6 +151,41 @@ public class Monster : MonoBehaviour
 
         if (Health <= 0)
             Die();
+
+        if (allied)
+        {
+            var time = 0.2f;
+            var color = Color.white;
+
+            if (amount > 0)
+            {
+                color = itemData.positiveOutline;
+            }
+            else
+            {
+                color = itemData.negativeOutline;
+            }
+
+            outline.OutlineParameters.Color = color;
+            outline.OutlineParameters.DOFade(0, 0);
+            outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
+
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time).OnComplete(() =>
+            {
+                outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
+            });
+
+            outline.OutlineParameters.DOFade(1, time).OnComplete(() =>
+            {
+                outline.OutlineParameters.DOFade(0, time);
+            });
+
+            if (itemData.particleVFX)
+            {
+                Instantiate(itemData.particleVFX, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90,0,0), animator.transform);
+            }
+        }
     }
 
     public void ChangePower(float amount)
@@ -142,10 +194,66 @@ public class Monster : MonoBehaviour
         Power = Mathf.Clamp(Power, power.x, power.y);
     }
 
-    public void ChangeAttackSpeed(float amount)
+    private Coroutine revertAttackSpeedCoroutine;
+
+    public void ChangeAttackSpeed(float amount, ControlPanel.ItemClass itemData)
     {
-        AttackSpeed += amount;
+        AttackSpeed = amount;
         AttackSpeed = Mathf.Clamp(AttackSpeed, attackSpeed.x, attackSpeed.y);
+
+        if (revertAttackSpeedCoroutine != null)
+        {
+            StopCoroutine(revertAttackSpeedCoroutine);
+            revertAttackSpeedCoroutine = null;
+        }
+
+        var time = 0.2f;
+
+        if (amount > 1)
+            animator.transform.DOScale(initScale + Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(BackToNormalFromAttackSpeed()));
+        else
+            animator.transform.DOScale(initScale - Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(BackToNormalFromAttackSpeed()));
+
+        if (allied)
+        {
+            var color = Color.white;
+
+            if (amount > 1)
+            {
+                color = itemData.positiveOutline;
+            }
+            else
+            {
+                color = itemData.negativeOutline;
+            }
+
+            outline.OutlineParameters.Color = color;
+            outline.OutlineParameters.DOFade(0, 0);
+            outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
+
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time);
+
+            outline.OutlineParameters.DOFade(1, time);
+
+            if (itemData.particleVFX)
+            {
+                Instantiate(itemData.particleVFX, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
+            }
+        }
+    }
+
+    private IEnumerator BackToNormalFromAttackSpeed()
+    {
+        yield return new WaitForSeconds(1f);
+
+        var time = 0.2f;
+        animator.transform.DOScale(initScale, time);
+        AttackSpeed = attackSpeed.z;
+        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
+        outline.OutlineParameters.DOFade(0, time);
+
+        revertAttackSpeedCoroutine = null;
     }
 
     public void ChangeShield(float amount)

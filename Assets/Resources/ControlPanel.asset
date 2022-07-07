@@ -16,15 +16,30 @@ MonoBehaviour:
   - type: 0
     positivePrefab: {fileID: -4688166447488384117, guid: 8fcdc90a3ab6b1a4688a2edd15eac5a0, type: 3}
     negativePrefab: {fileID: 423617624548772835, guid: 2293db10aa07ab04cbe9b3760b4cd6a7, type: 3}
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
+    particleVFX: {fileID: 0}
   - type: 1
     positivePrefab: {fileID: -5982045469468564986, guid: b6b305eb3b29a8f48a0408daa6519c15, type: 3}
     negativePrefab: {fileID: 6277603288333401484, guid: f88b4505048584f479b0492dac5b0a13, type: 3}
+    positiveOutline: {r: 1, g: 0.85065913, b: 0, a: 1}
+    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
+    particleVFX: {fileID: 0}
   - type: 2
     positivePrefab: {fileID: 6951519966567464433, guid: e453e4434fea3054fa733acd028e5fea, type: 3}
     negativePrefab: {fileID: -2649829783266644469, guid: 059747d416240cb459a2a0882553410c, type: 3}
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
+    particleVFX: {fileID: 0}
   - type: 3
     positivePrefab: {fileID: 9207664458540473979, guid: 5db1b945829d878438466294af43bbfc, type: 3}
     negativePrefab: {fileID: 1723482184845850070, guid: 335ff4c14d04f6141a81278a34fae7f3, type: 3}
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
+    particleVFX: {fileID: 0}
   - type: 4
     positivePrefab: {fileID: -2066558652946539435, guid: 5d068bfb4f49d2a42b20bad32892fec5, type: 3}
     negativePrefab: {fileID: 7746084458429611271, guid: 3aa6ccc8bf167b343935f3609b422ad4, type: 3}
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
+    particleVFX: {fileID: 0}

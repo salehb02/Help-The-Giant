@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailParticle: {fileID: 1113972268356879538, guid: a6505f77f7fb7e4468eeb7b8364c305c, type: 3}
-  trailLerpSpeed: 5
+  trailLerpSpeed: 15
   itemType: 1
-  itemChangeAmount: 0.3
+  itemChangeAmount: 2
 --- !u!1001 &7545131057286093681
 PrefabInstance:
   m_ObjectHideFlags: 0
