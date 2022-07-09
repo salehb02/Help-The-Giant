@@ -4,7 +4,6 @@ using UnityEngine;
 public class ControlPanel : ScriptableObject
 {
     public ItemClass[] items;
-    public bool decoryConversions;
 
     [Header("Particles")]
     public GameObject positiveItemParticle;

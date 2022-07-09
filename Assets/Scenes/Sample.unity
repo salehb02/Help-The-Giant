@@ -170,7 +170,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &23869032
 GameObject:
@@ -500,8 +500,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &68746754
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &83960118
 GameObject:
@@ -598,8 +598,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &101820154
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,9 +646,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &126648092
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +810,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &166946458 stripped
 GameObject:
@@ -880,9 +880,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &204418473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &240441982
 GameObject:
@@ -1086,8 +1086,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &266785737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &277742629 stripped
 GameObject:
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &353678932
 GameObject:
@@ -1400,8 +1400,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &395445296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,8 +1449,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &451832152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,9 +1970,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 0
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &555506623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011930484320, guid: 5bcbf31ded2e353449622ec74f8954da, type: 3}
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &638515778
 GameObject:
@@ -2142,7 +2142,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &640231411
 GameObject:
@@ -2227,8 +2227,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &683936822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,8 +2276,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &716069651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,7 +2325,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1001 &761553035
 PrefabInstance:
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 0
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!4 &781153463
 Transform:
@@ -3032,9 +3032,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &996157858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,7 +3082,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &1038284205
 GameObject:
@@ -3131,7 +3131,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &1046440465
 GameObject:
@@ -3520,9 +3520,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &1318271226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,9 +3680,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &1412498469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,7 +3730,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &1420428665
 GameObject:
@@ -4301,8 +4301,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 0
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &1483629443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4386,8 +4386,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &1562607917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,7 +4435,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 2
 --- !u!1 &1569773405
 GameObject:
@@ -4666,7 +4666,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &1646294096
 GameObject:
@@ -4807,7 +4807,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &1653900310
 GameObject:
@@ -4930,9 +4930,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &1730880458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000012820711496, guid: 5bcbf31ded2e353449622ec74f8954da, type: 3}
@@ -4997,7 +4997,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 0
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &1745267491
 GameObject:
@@ -5281,7 +5281,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &1867445103 stripped
 GameObject:
@@ -5369,7 +5369,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &1960628292
 GameObject:
@@ -5685,9 +5685,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &2048329819
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,9 +5734,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &2068009615
 GameObject:
   m_ObjectHideFlags: 0
@@ -5896,9 +5896,9 @@ MonoBehaviour:
   itemType: 3
   statue: 1
   amountTextVisibility: 1
-  amountConversion: 0
-  coversionAmount: 1
-  changeAmount: -5
+  amountConversion: 2
+  multiplyAmount: 2
+  changeAmount: 1.1
 --- !u!1 &2084346666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5946,7 +5946,7 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
+  multiplyAmount: 0
   changeAmount: 1.5
 --- !u!1 &2091472065
 GameObject:
@@ -5995,8 +5995,8 @@ MonoBehaviour:
   statue: 0
   amountTextVisibility: 1
   amountConversion: 0
-  coversionAmount: 1
-  changeAmount: 7
+  multiplyAmount: 2
+  changeAmount: 0.1
 --- !u!1 &61770651896312102
 GameObject:
   m_ObjectHideFlags: 0

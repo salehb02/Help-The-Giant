@@ -29,6 +29,7 @@ public class Monster : MonoBehaviour
 
     private bool dead;
     private Vector3 initScale;
+    private Coroutine revertAttackSpeedCoroutine;
 
     public const string ATTACK_TRIGGER = "Attack";
     public const string DEAD_TRIGGER = "Dead";
@@ -143,9 +144,9 @@ public class Monster : MonoBehaviour
         Shield = shield.z;
     }
 
-    public void ChangeHealth(float amount,ControlPanel.ItemClass itemData)
+    public void ChangeHealth(float amount,AmountCoversion coversion,ControlPanel.ItemClass itemData)
     {
-        Health += amount;
+        Health = GetChangeAmount(Health, amount, coversion);
         Health = Mathf.Clamp(Health, health.x, health.y);
         UpdateUI();
 
@@ -188,13 +189,11 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void ChangePower(float amount)
+    public void ChangePower(AmountCoversion amountCoversion,float amount)
     {
-        Power += amount;
+        Power = GetChangeAmount(Power, amount,amountCoversion);
         Power = Mathf.Clamp(Power, power.x, power.y);
     }
-
-    private Coroutine revertAttackSpeedCoroutine;
 
     public void ChangeAttackSpeed(float amount, ControlPanel.ItemClass itemData)
     {
@@ -265,5 +264,30 @@ public class Monster : MonoBehaviour
     public void ChangeDNA()
     {
 
+    }
+
+    private float GetChangeAmount(float currentValue, float changeAmount, AmountCoversion coversion)
+    {
+        var newAmount = currentValue;
+
+        switch (coversion)
+        {
+            case AmountCoversion.Add:
+                newAmount += changeAmount;
+                break;
+            case AmountCoversion.Subtract:
+                newAmount -= changeAmount;
+                break;
+            case AmountCoversion.Multiply:
+                newAmount *= changeAmount;
+                break;
+            case AmountCoversion.Divide:
+                newAmount /= changeAmount;
+                break;
+            default:
+                break;
+        }
+
+        return newAmount;
     }
 }

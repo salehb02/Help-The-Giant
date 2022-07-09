@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private GameObject trailParticle;
     private float itemChangeAmount;
+    private AmountCoversion conversion;
 
     private void Start()
     {
@@ -59,7 +60,7 @@ public class Item : MonoBehaviour
         switch (itemType)
         {
             case ItemType.Power:
-                alliedMonster.ChangePower(itemChangeAmount);
+                alliedMonster.ChangePower(conversion,itemChangeAmount);
                 break;
             case ItemType.AttackSpeed:
                 alliedMonster.ChangeAttackSpeed(itemChangeAmount, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
@@ -68,7 +69,7 @@ public class Item : MonoBehaviour
                 alliedMonster.ChangeDNA();
                 break;
             case ItemType.Health:
-                alliedMonster.ChangeHealth(itemChangeAmount, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
+                alliedMonster.ChangeHealth(itemChangeAmount, conversion, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
                 break;
             case ItemType.Shield:
                 alliedMonster.ChangeShield(itemChangeAmount);
@@ -78,10 +79,11 @@ public class Item : MonoBehaviour
         }
     }
 
-    public void SetupItem(string amountText, float addAmount, bool isNegative, bool visibleAmount)
+    public void SetupItem(string amountText,AmountCoversion coversion, float addAmount, bool isNegative, bool visibleAmount)
     {
         this.amountText.text = amountText;
         itemChangeAmount = addAmount;
+        this.conversion = coversion;
 
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
