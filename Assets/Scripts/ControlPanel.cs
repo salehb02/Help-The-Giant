@@ -5,12 +5,20 @@ public class ControlPanel : ScriptableObject
 {
     public ItemClass[] items;
 
+    [Header("Particles")]
+    public GameObject positiveItemParticle;
+    public GameObject negativeItemParticle;
+    public float itemParticleLerpSpeed = 10f;
+
+    [Header("Colors")]
+    public Color positiveItemColor = Color.green;
+    public Color negativeItemColor = Color.red;
+
     [System.Serializable]
     public class ItemClass
     {
         public ItemType type;
-        public Item positivePrefab;
-        public Item negativePrefab;
+        public Item prefab;
 
         [Header("Outline Settings")]
         [Space(2)]

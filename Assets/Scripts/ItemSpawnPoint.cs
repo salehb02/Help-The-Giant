@@ -5,26 +5,35 @@ public class ItemSpawnPoint : MonoBehaviour
 {
     [SerializeField] ItemType itemType;
     [SerializeField] ItemStatue statue;
+    [SerializeField] ItemAmount amount;
+    [SerializeField] float changeAmount = 1;
 
     private void Start()
+    {
+        InstantiateItem();
+    }
+
+    private void InstantiateItem()
     {
         var currentItem = ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType);
 
         if (currentItem != null)
         {
-            switch (statue)
-            {
-                case ItemStatue.Positive:
-                    Instantiate(currentItem.positivePrefab, transform.position, transform.rotation, transform);
-                    break;
-                case ItemStatue.Negative:
-                    Instantiate(currentItem.negativePrefab, transform.position, transform.rotation, transform);
-                    break;
-                default:
-                    break;
-            }
+            var item = Instantiate(currentItem.prefab, transform.position, transform.rotation, transform);
+            item.SetupItem(GetEnumText(amount), changeAmount, statue == ItemStatue.Negative ? true : false);
         }
     }
+
+    private string GetEnumText(ItemAmount itemAmount) => itemAmount switch
+    {
+        ItemAmount.x1 => "X1",
+        ItemAmount.x2 => "X2",
+        ItemAmount.x3 => "X3",
+        ItemAmount.Add1 => "+1",
+        ItemAmount.Add2 => "+2",
+        ItemAmount.Add3 => "+3",
+        _ => throw new System.NotImplementedException(),
+    };
 
     private void OnDrawGizmos()
     {

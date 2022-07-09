@@ -1,24 +1,27 @@
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class Item : MonoBehaviour
 {
-    public GameObject trailParticle;
-    public float trailLerpSpeed = 5f;
-    [Space(2)]
     public ItemType itemType;
-    public float itemChangeAmount;
+    private float itemChangeAmount;
+    [Space(2)]
+    public TextMeshPro amountText;
 
     internal Monster alliedMonster;
     private bool throwItem = false;
     private Vector3 initPos;
     private float progression;
-
+    private SpriteRenderer spriteRenderer;
+    private GameObject trailParticle;
 
     private void Start()
     {
-        foreach(var monster in FindObjectsOfType<Monster>())
-            if(monster.allied)
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        foreach (var monster in FindObjectsOfType<Monster>())
+            if (monster.allied)
                 alliedMonster = monster;
 
         initPos = transform.position;
@@ -28,7 +31,7 @@ public class Item : MonoBehaviour
     {
         if (throwItem)
         {
-            progression += Time.deltaTime * trailLerpSpeed / 10f;
+            progression += Time.deltaTime * ControlPanel.Instance.itemParticleLerpSpeed / 10f;
             transform.position = Vector3.Lerp(initPos, alliedMonster.transform.position, progression);
         }
     }
@@ -73,6 +76,26 @@ public class Item : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    public void SetupItem(string amountText, float addAmount, bool isNegative)
+    {
+        this.amountText.text = amountText;
+        itemChangeAmount = addAmount;
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (isNegative)
+        {
+            spriteRenderer.color = ControlPanel.Instance.negativeItemColor;
+            trailParticle = ControlPanel.Instance.negativeItemParticle;
+        }
+        else
+        {
+            spriteRenderer.color = ControlPanel.Instance.positiveItemColor;
+            trailParticle = ControlPanel.Instance.positiveItemParticle;
         }
     }
 }
