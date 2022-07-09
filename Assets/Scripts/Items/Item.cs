@@ -5,8 +5,6 @@ using TMPro;
 public class Item : MonoBehaviour
 {
     public ItemType itemType;
-    private float itemChangeAmount;
-    [Space(2)]
     public TextMeshPro amountText;
 
     internal Monster alliedMonster;
@@ -15,6 +13,7 @@ public class Item : MonoBehaviour
     private float progression;
     private SpriteRenderer spriteRenderer;
     private GameObject trailParticle;
+    private float itemChangeAmount;
 
     private void Start()
     {

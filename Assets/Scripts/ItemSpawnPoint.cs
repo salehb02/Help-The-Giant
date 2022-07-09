@@ -6,7 +6,8 @@ public class ItemSpawnPoint : MonoBehaviour
     [SerializeField] ItemType itemType;
     [SerializeField] ItemStatue statue;
     [SerializeField] Visibility amountTextVisibility;
-    [SerializeField] ItemAmount amount;
+    [SerializeField] AmountCoversion amountConversion;
+    [SerializeField] float coversionAmount;
     [SerializeField] float changeAmount = 1;
 
     private void Start()
@@ -21,20 +22,46 @@ public class ItemSpawnPoint : MonoBehaviour
         if (currentItem != null)
         {
             var item = Instantiate(currentItem.prefab, transform.position, transform.rotation, transform);
-            item.SetupItem(GetEnumText(amount), changeAmount, statue == ItemStatue.Negative ? true : false, amountTextVisibility == Visibility.Show ? true : false);
+            item.SetupItem(GetEnumText(amountConversion) + coversionAmount, GetChangeAmount(), statue == ItemStatue.Negative ? true : false, amountTextVisibility == Visibility.Show ? true : false);
         }
     }
 
-    private string GetEnumText(ItemAmount itemAmount) => itemAmount switch
+    private string GetEnumText(AmountCoversion itemAmount) => itemAmount switch
     {
-        ItemAmount.x1 => "X1",
-        ItemAmount.x2 => "X2",
-        ItemAmount.x3 => "X3",
-        ItemAmount.Add1 => "+1",
-        ItemAmount.Add2 => "+2",
-        ItemAmount.Add3 => "+3",
+        AmountCoversion.Add => "+",
+        AmountCoversion.Subtract => "-",
+        AmountCoversion.Multiply => "X",
+        AmountCoversion.Divide => "/",
         _ => throw new System.NotImplementedException(),
     };
+
+    private float GetChangeAmount()
+    {
+        var amount = changeAmount;
+
+        if (ControlPanel.Instance.decoryConversions)
+            return amount;
+
+        switch (amountConversion)
+        {
+            case AmountCoversion.Add:
+                amount += coversionAmount;
+                break;
+            case AmountCoversion.Subtract:
+                amount -= coversionAmount;
+                break;
+            case AmountCoversion.Multiply:
+                amount *= coversionAmount;
+                break;
+            case AmountCoversion.Divide:
+                amount /= coversionAmount;
+                break;
+            default:
+                break;
+        }
+
+        return amount;
+    }
 
     private void OnDrawGizmos()
     {

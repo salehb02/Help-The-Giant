@@ -1,1 +1,1 @@
-public enum ItemAmount { x1, x2, x3, Add1, Add2, Add3 }
+public enum AmountCoversion { Add, Subtract, Multiply, Divide }
