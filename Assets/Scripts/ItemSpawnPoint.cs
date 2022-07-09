@@ -5,6 +5,7 @@ public class ItemSpawnPoint : MonoBehaviour
 {
     [SerializeField] ItemType itemType;
     [SerializeField] ItemStatue statue;
+    [SerializeField] Visibility amountTextVisibility;
     [SerializeField] ItemAmount amount;
     [SerializeField] float changeAmount = 1;
 
@@ -20,7 +21,7 @@ public class ItemSpawnPoint : MonoBehaviour
         if (currentItem != null)
         {
             var item = Instantiate(currentItem.prefab, transform.position, transform.rotation, transform);
-            item.SetupItem(GetEnumText(amount), changeAmount, statue == ItemStatue.Negative ? true : false);
+            item.SetupItem(GetEnumText(amount), changeAmount, statue == ItemStatue.Negative ? true : false, amountTextVisibility == Visibility.Show ? true : false);
         }
     }
 

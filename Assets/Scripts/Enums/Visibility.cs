@@ -1,0 +1,1 @@
+public enum Visibility { Show, Hide }

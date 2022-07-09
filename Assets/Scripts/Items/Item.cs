@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         foreach (var monster in FindObjectsOfType<Monster>())
             if (monster.allied)
@@ -79,13 +79,13 @@ public class Item : MonoBehaviour
         }
     }
 
-    public void SetupItem(string amountText, float addAmount, bool isNegative)
+    public void SetupItem(string amountText, float addAmount, bool isNegative, bool visibleAmount)
     {
         this.amountText.text = amountText;
         itemChangeAmount = addAmount;
 
         if (spriteRenderer == null)
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         if (isNegative)
         {
@@ -97,5 +97,7 @@ public class Item : MonoBehaviour
             spriteRenderer.color = ControlPanel.Instance.positiveItemColor;
             trailParticle = ControlPanel.Instance.positiveItemParticle;
         }
+
+        spriteRenderer.gameObject.SetActive(visibleAmount ? true : false);
     }
 }

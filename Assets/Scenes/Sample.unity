@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &23869032
@@ -496,6 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &68746754
@@ -543,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &83960118
@@ -590,6 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &101820154
@@ -637,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &126648092
@@ -798,6 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &166946458 stripped
@@ -867,6 +873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &204418473
@@ -1021,6 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &240441982
@@ -1068,6 +1076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &266785737
@@ -1115,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &277742629 stripped
@@ -1254,6 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &353678932
@@ -1376,6 +1387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &395445296
@@ -1423,6 +1435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &451832152
@@ -1943,6 +1956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 0
   amount: 0
   changeAmount: -5
 --- !u!1 &555506623 stripped
@@ -2063,6 +2077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &638515778
@@ -2110,6 +2125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &640231411
@@ -2193,6 +2209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &683936822
@@ -2240,6 +2257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &716069651
@@ -2287,6 +2305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1001 &761553035
@@ -2730,6 +2749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 0
   amount: 1
   changeAmount: 2
 --- !u!4 &781153463
@@ -2991,6 +3011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &996157858
@@ -3038,6 +3059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &1038284205
@@ -3085,6 +3107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &1046440465
@@ -3473,6 +3496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &1318271226
@@ -3631,6 +3655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &1412498469
@@ -3678,6 +3703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &1420428665
@@ -4247,6 +4273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 0
   amount: 1
   changeAmount: 7
 --- !u!1 &1483629443
@@ -4330,6 +4357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &1562607917
@@ -4377,6 +4405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 2
 --- !u!1 &1569773405
@@ -4606,6 +4635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &1646294096
@@ -4745,6 +4775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &1653900310
@@ -4867,6 +4898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &1730880458 stripped
@@ -4931,6 +4963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 0
   amount: 4
   changeAmount: 1.5
 --- !u!1 &1745267491
@@ -5213,6 +5246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &1867445103 stripped
@@ -5299,6 +5333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &1960628292
@@ -5614,6 +5649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &2048329819
@@ -5661,6 +5697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &2068009615
@@ -5821,6 +5858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 1
+  amountTextVisibility: 1
   amount: 0
   changeAmount: -5
 --- !u!1 &2084346666
@@ -5868,6 +5906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   statue: 0
+  amountTextVisibility: 1
   amount: 4
   changeAmount: 1.5
 --- !u!1 &2091472065
@@ -5915,6 +5954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   statue: 0
+  amountTextVisibility: 1
   amount: 1
   changeAmount: 7
 --- !u!1 &61770651896312102
