@@ -6,7 +6,7 @@ public class ItemSpawnPoint : MonoBehaviour
     [SerializeField] ItemType itemType;
     [SerializeField] ItemStatue statue;
     [SerializeField] Visibility amountTextVisibility;
-    [SerializeField] AmountCoversion amountConversion;
+    [SerializeField] AmountConversion amountConversion;
     [SerializeField] float multiplyAmount;
     [SerializeField] float changeAmount = 1;
 
@@ -22,16 +22,16 @@ public class ItemSpawnPoint : MonoBehaviour
         if (currentItem != null)
         {
             var item = Instantiate(currentItem.prefab, transform.position, transform.rotation, transform);
-            item.SetupItem(GetEnumText(amountConversion) + multiplyAmount, amountConversion, changeAmount * multiplyAmount, statue == ItemStatue.Negative ? true : false, amountTextVisibility == Visibility.Show ? true : false);
+            item.SetupItem(GetEnumText(amountConversion) + multiplyAmount, amountConversion, changeAmount, multiplyAmount, statue == ItemStatue.Negative ? true : false, amountTextVisibility == Visibility.Show ? true : false);
         }
     }
 
-    private string GetEnumText(AmountCoversion itemAmount) => itemAmount switch
+    private string GetEnumText(AmountConversion itemAmount) => itemAmount switch
     {
-        AmountCoversion.Add => "+",
-        AmountCoversion.Subtract => "-",
-        AmountCoversion.Multiply => "X",
-        AmountCoversion.Divide => "/",
+        AmountConversion.Add => "+",
+        AmountConversion.Subtract => "-",
+        AmountConversion.Multiply => "X",
+        AmountConversion.Divide => "/",
         _ => throw new System.NotImplementedException(),
     };
 

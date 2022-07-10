@@ -62,7 +62,7 @@ public class Monster : MonoBehaviour
 
         StartCoroutine(CheckAttackCoroutine());
 
-        if(allied)
+        if (allied)
         {
             outline.OutlineParameters.DOFade(0, 0);
             outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
@@ -144,9 +144,9 @@ public class Monster : MonoBehaviour
         Shield = shield.z;
     }
 
-    public void ChangeHealth(float amount,AmountCoversion coversion,ControlPanel.ItemClass itemData)
+    public void ChangeHealth(float amount, float multiplier, AmountConversion coversion, ControlPanel.ItemClass itemData)
     {
-        Health = GetChangeAmount(Health, amount, coversion);
+        Health = GetChangeAmount(Health, amount, multiplier, coversion);
         Health = Mathf.Clamp(Health, health.x, health.y);
         UpdateUI();
 
@@ -184,20 +184,20 @@ public class Monster : MonoBehaviour
 
             if (itemData.particleVFX)
             {
-                Instantiate(itemData.particleVFX, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90,0,0), animator.transform);
+                Instantiate(itemData.particleVFX, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
             }
         }
     }
 
-    public void ChangePower(AmountCoversion amountCoversion,float amount)
+    public void ChangePower(AmountConversion amountCoversion, float amount,float multiplier)
     {
-        Power = GetChangeAmount(Power, amount,amountCoversion);
+        Power = GetChangeAmount(Power, amount, multiplier, amountCoversion);
         Power = Mathf.Clamp(Power, power.x, power.y);
     }
 
-    public void ChangeAttackSpeed(float amount, ControlPanel.ItemClass itemData)
+    public void ChangeAttackSpeed(float amount,float multiplier,AmountConversion conversion, ControlPanel.ItemClass itemData)
     {
-        AttackSpeed = amount;
+        AttackSpeed = GetChangeAmount(AttackSpeed, amount, multiplier, conversion);
         AttackSpeed = Mathf.Clamp(AttackSpeed, attackSpeed.x, attackSpeed.y);
 
         if (revertAttackSpeedCoroutine != null)
@@ -266,23 +266,23 @@ public class Monster : MonoBehaviour
 
     }
 
-    private float GetChangeAmount(float currentValue, float changeAmount, AmountCoversion coversion)
+    private float GetChangeAmount(float currentValue, float changeAmount, float multiplier, AmountConversion coversion)
     {
         var newAmount = currentValue;
 
         switch (coversion)
         {
-            case AmountCoversion.Add:
-                newAmount += changeAmount;
+            case AmountConversion.Add:
+                newAmount += multiplier * changeAmount;
                 break;
-            case AmountCoversion.Subtract:
-                newAmount -= changeAmount;
+            case AmountConversion.Subtract:
+                newAmount -= multiplier * changeAmount;
                 break;
-            case AmountCoversion.Multiply:
-                newAmount *= changeAmount;
+            case AmountConversion.Multiply:
+                newAmount *= multiplier - changeAmount;
                 break;
-            case AmountCoversion.Divide:
-                newAmount /= changeAmount;
+            case AmountConversion.Divide:
+                newAmount /= multiplier + changeAmount;
                 break;
             default:
                 break;

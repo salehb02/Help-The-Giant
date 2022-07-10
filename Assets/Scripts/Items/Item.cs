@@ -14,7 +14,8 @@ public class Item : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private GameObject trailParticle;
     private float itemChangeAmount;
-    private AmountCoversion conversion;
+    private float _multiplier;
+    private AmountConversion conversion;
 
     private void Start()
     {
@@ -60,16 +61,16 @@ public class Item : MonoBehaviour
         switch (itemType)
         {
             case ItemType.Power:
-                alliedMonster.ChangePower(conversion,itemChangeAmount);
+                alliedMonster.ChangePower(conversion, itemChangeAmount,_multiplier);
                 break;
             case ItemType.AttackSpeed:
-                alliedMonster.ChangeAttackSpeed(itemChangeAmount, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
+                alliedMonster.ChangeAttackSpeed(itemChangeAmount, _multiplier,conversion, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
                 break;
             case ItemType.DNA:
                 alliedMonster.ChangeDNA();
                 break;
             case ItemType.Health:
-                alliedMonster.ChangeHealth(itemChangeAmount, conversion, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
+                alliedMonster.ChangeHealth(itemChangeAmount, _multiplier, conversion, ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType));
                 break;
             case ItemType.Shield:
                 alliedMonster.ChangeShield(itemChangeAmount);
@@ -79,11 +80,12 @@ public class Item : MonoBehaviour
         }
     }
 
-    public void SetupItem(string amountText,AmountCoversion coversion, float addAmount, bool isNegative, bool visibleAmount)
+    public void SetupItem(string amountText, AmountConversion conversion, float addAmount, float multiplier, bool isNegative, bool visibleAmount)
     {
         this.amountText.text = amountText;
         itemChangeAmount = addAmount;
-        this.conversion = coversion;
+        _multiplier = multiplier;
+        this.conversion = conversion;
 
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
