@@ -22,18 +22,28 @@ public class Monster : MonoBehaviour
     [Header("UI")]
     public Slider healthBar;
 
+    [Header("Pivots")]
+    public GameObject leftHandParticlePivot;
+    public GameObject rightHandParticlePivot;
+    public GameObject headParticlePivot;
+
     public float Health { get; private set; }
     public float Power { get; private set; }
     public float AttackSpeed { get; private set; }
     public float Shield { get; private set; }
+    public bool IsDead { get => dead; }
+    public bool IsConfused { get; private set; }
 
     private bool dead;
     private Vector3 initScale;
     private Coroutine revertAttackSpeedCoroutine;
+    private Coroutine revertPowerCoroutine;
+    private Coroutine revertPoopCoroutine;
 
     public const string ATTACK_TRIGGER = "Attack";
     public const string DEAD_TRIGGER = "Dead";
     public const string ATTACK_SPEED = "AttackSpeed";
+    public const string CONFUSED_TRIGGER = "Confuse";
 
     private Animator animator;
     private Monster enemyMonster;
@@ -74,7 +84,7 @@ public class Monster : MonoBehaviour
         // Warm up
         yield return new WaitForSeconds(0.5f);
 
-        while (IsDead() == false)
+        while (IsDead == false)
         {
             Attack();
 
@@ -84,7 +94,10 @@ public class Monster : MonoBehaviour
 
     public void Attack()
     {
-        if (enemyMonster && enemyMonster.IsDead())
+        if (enemyMonster && enemyMonster.IsDead)
+            return;
+
+        if (IsConfused)
             return;
 
         animator?.SetFloat(ATTACK_SPEED, AttackSpeed);
@@ -118,8 +131,6 @@ public class Monster : MonoBehaviour
         healthBar.value = Health;
     }
 
-    public bool IsDead() => dead;
-
     private void InitHealth()
     {
         Health = health.z;
@@ -144,145 +155,190 @@ public class Monster : MonoBehaviour
         Shield = shield.z;
     }
 
-    public void ChangeHealth(float amount, float multiplier, AmountConversion coversion, ControlPanel.ItemClass itemData)
+    // OnHealthPickup
+    public void ChangeHealth(Item item)
     {
-        Health = GetChangeAmount(Health, amount, multiplier, coversion);
+        Health = GetChangeAmount(Health, item);
         Health = Mathf.Clamp(Health, health.x, health.y);
         UpdateUI();
 
         if (Health <= 0)
             Die();
 
-        if (allied)
+        if (!allied)
+            return;
+
+        var time = 0.2f;
+        var color = item.GetOutlineColor();
+
+        outline.OutlineParameters.Color = color;
+        outline.OutlineParameters.DOFade(0, 0);
+        outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
+        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
+
+        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time).OnComplete(() =>
         {
-            var time = 0.2f;
-            var color = Color.white;
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
+        });
 
-            if (amount > 0)
-            {
-                color = itemData.positiveOutline;
-            }
-            else
-            {
-                color = itemData.negativeOutline;
-            }
+        outline.OutlineParameters.DOFade(1, time).OnComplete(() =>
+        {
+            outline.OutlineParameters.DOFade(0, time);
+        });
 
-            outline.OutlineParameters.Color = color;
-            outline.OutlineParameters.DOFade(0, 0);
-            outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
-            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
+        var vfx = item.GetVFX();
 
-            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time).OnComplete(() =>
-            {
-                outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
-            });
+        if (vfx)
+            Instantiate(vfx, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
+    }
 
-            outline.OutlineParameters.DOFade(1, time).OnComplete(() =>
-            {
-                outline.OutlineParameters.DOFade(0, time);
-            });
-
-            if (itemData.particleVFX)
-            {
-                Instantiate(itemData.particleVFX, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
-            }
+    // OnPowerPickup
+    public void PowerAffection(Item item)
+    {
+        if (revertPowerCoroutine != null)
+        {
+            StopCoroutine(revertPowerCoroutine);
+            revertPowerCoroutine = null;
         }
+        else
+        {
+            Power = GetChangeAmount(Power, item);
+            Power = Mathf.Clamp(Power, power.x, power.y);
+        }
+
+        var vfx = item.GetVFX();
+
+        if (rightHandParticlePivot.transform.childCount == 0 && vfx)
+            Instantiate(vfx, rightHandParticlePivot.transform.position, rightHandParticlePivot.transform.rotation, rightHandParticlePivot.transform);
+
+        if (leftHandParticlePivot.transform.childCount == 0 && vfx)
+            Instantiate(vfx, leftHandParticlePivot.transform.position, leftHandParticlePivot.transform.rotation, leftHandParticlePivot.transform);
+
+        revertPowerCoroutine = StartCoroutine(RevertPowerCoroutine());
     }
 
-    public void ChangePower(AmountConversion amountCoversion, float amount,float multiplier)
+    private IEnumerator RevertPowerCoroutine()
     {
-        Power = GetChangeAmount(Power, amount, multiplier, amountCoversion);
-        Power = Mathf.Clamp(Power, power.x, power.y);
+        yield return new WaitForSeconds(1f);
+
+        foreach (Transform obj in rightHandParticlePivot.transform)
+            Destroy(obj.gameObject);
+
+        foreach (Transform obj in leftHandParticlePivot.transform)
+            Destroy(obj.gameObject);
+
+        Power = power.z;
+        revertPowerCoroutine = null;
     }
 
-    public void ChangeAttackSpeed(float amount,float multiplier,AmountConversion conversion, ControlPanel.ItemClass itemData)
+    // OnAttackSpeedPickup
+    public void AttackSpeedAffection(Item item)
     {
-        AttackSpeed = GetChangeAmount(AttackSpeed, amount, multiplier, conversion);
-        AttackSpeed = Mathf.Clamp(AttackSpeed, attackSpeed.x, attackSpeed.y);
-
         if (revertAttackSpeedCoroutine != null)
         {
             StopCoroutine(revertAttackSpeedCoroutine);
             revertAttackSpeedCoroutine = null;
         }
+        else
+        {
+            AttackSpeed = GetChangeAmount(AttackSpeed, item);
+            AttackSpeed = Mathf.Clamp(AttackSpeed, attackSpeed.x, attackSpeed.y);
+        }
 
         var time = 0.2f;
 
-        if (amount > 1)
-            animator.transform.DOScale(initScale + Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(BackToNormalFromAttackSpeed()));
+        if (item.ChangeAmount > 1)
+            animator.transform.DOScale(initScale + Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
         else
-            animator.transform.DOScale(initScale - Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(BackToNormalFromAttackSpeed()));
+            animator.transform.DOScale(initScale - Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
 
-        if (allied)
-        {
-            var color = Color.white;
+        if (!allied)
+            return;
 
-            if (amount > 1)
-            {
-                color = itemData.positiveOutline;
-            }
-            else
-            {
-                color = itemData.negativeOutline;
-            }
+        var color = item.GetOutlineColor();
 
-            outline.OutlineParameters.Color = color;
-            outline.OutlineParameters.DOFade(0, 0);
-            outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
-            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
+        outline.OutlineParameters.Color = color;
+        outline.OutlineParameters.DOFade(0, 0);
+        outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
+        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
+        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time);
+        outline.OutlineParameters.DOFade(1, time);
 
-            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time);
+        var vfx = item.GetVFX();
 
-            outline.OutlineParameters.DOFade(1, time);
-
-            if (itemData.particleVFX)
-            {
-                Instantiate(itemData.particleVFX, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
-            }
-        }
+        if (vfx)
+            Instantiate(vfx, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
     }
 
-    private IEnumerator BackToNormalFromAttackSpeed()
+    private IEnumerator RevertAttackSpeedCoroutine()
     {
         yield return new WaitForSeconds(1f);
 
         var time = 0.2f;
         animator.transform.DOScale(initScale, time);
-        AttackSpeed = attackSpeed.z;
         outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
         outline.OutlineParameters.DOFade(0, time);
+        AttackSpeed = attackSpeed.z;
 
         revertAttackSpeedCoroutine = null;
     }
 
-    public void ChangeShield(float amount)
+    // OnPoopPickup
+    public void PoopAffection(Item item)
     {
-        Shield += amount;
+        if (revertPoopCoroutine != null)
+        {
+            StopCoroutine(revertPoopCoroutine);
+            revertPoopCoroutine = null;
+        }
+        else
+        {
+            IsConfused = true;
+            animator.SetTrigger(CONFUSED_TRIGGER);
+        }
+
+        if (headParticlePivot.transform.childCount == 0)
+            Instantiate(item.GetVFX(), headParticlePivot.transform.position, headParticlePivot.transform.rotation, headParticlePivot.transform);
+
+        revertPoopCoroutine = StartCoroutine(RevertPoopCoroutine());
+    }
+
+    private IEnumerator RevertPoopCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        IsConfused = false;
+
+        foreach (Transform particle in headParticlePivot.transform)
+            Destroy(particle.gameObject);
+
+        revertPoopCoroutine = null;
+    }
+
+    // OnShieldPickup
+    public void ChangeShield(Item item)
+    {
+        Shield += item.ChangeAmount;
         Shield = Mathf.Clamp(Shield, shield.x, shield.y);
     }
 
-    public void ChangeDNA()
-    {
-
-    }
-
-    private float GetChangeAmount(float currentValue, float changeAmount, float multiplier, AmountConversion coversion)
+    private float GetChangeAmount(float currentValue, Item item)
     {
         var newAmount = currentValue;
 
-        switch (coversion)
+        switch (item.Operator)
         {
-            case AmountConversion.Add:
-                newAmount += multiplier * changeAmount;
+            case MathOperators.Add:
+                newAmount += item.Multiplier * item.ChangeAmount;
                 break;
-            case AmountConversion.Subtract:
-                newAmount -= multiplier * changeAmount;
+            case MathOperators.Subtract:
+                newAmount -= item.Multiplier * item.ChangeAmount;
                 break;
-            case AmountConversion.Multiply:
-                newAmount *= multiplier - changeAmount;
+            case MathOperators.Multiply:
+                newAmount *= item.Multiplier - item.ChangeAmount;
                 break;
-            case AmountConversion.Divide:
-                newAmount /= multiplier + changeAmount;
+            case MathOperators.Divide:
+                newAmount /= item.Multiplier + item.ChangeAmount;
                 break;
             default:
                 break;

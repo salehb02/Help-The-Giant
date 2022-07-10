@@ -1,1 +1,0 @@
-public enum AmountConversion { Add, Subtract, Multiply, Divide }

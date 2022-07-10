@@ -940,11 +940,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &166946458 stripped
 GameObject:
@@ -1167,11 +1167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &240441982
 GameObject:
@@ -1399,11 +1399,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &277742629 stripped
 GameObject:
@@ -1540,11 +1540,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &353678932
 GameObject:
@@ -1871,6 +1871,9 @@ MonoBehaviour:
   baseAttackDelay: 1.133
   shield: {x: 0, y: 5, z: 0}
   healthBar: {fileID: 23869034}
+  leftHandParticlePivot: {fileID: 1217960858}
+  rightHandParticlePivot: {fileID: 1792314170}
+  headParticlePivot: {fileID: 1192700069}
 --- !u!4 &487246315
 Transform:
   m_ObjectHideFlags: 0
@@ -2357,11 +2360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &638515778
 GameObject:
@@ -2406,11 +2409,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &640231411
 GameObject:
@@ -2589,11 +2592,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1001 &761553035
 PrefabInstance:
@@ -3034,11 +3037,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
-  amountTextVisibility: 0
+  itemType: 4
+  statue: 1
+  amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!4 &781153463
 Transform:
@@ -3346,11 +3349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &1038284205
 GameObject:
@@ -3550,6 +3553,66 @@ Transform:
   m_Father: {fileID: 295956596}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -64.42, z: 0}
+--- !u!1 &1192700069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1192700070}
+  m_Layer: 6
+  m_Name: Particle Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1192700070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192700069}
+  m_LocalRotation: {x: -0.20331426, y: 0.67724687, z: 0.47579923, w: 0.5230823}
+  m_LocalPosition: {x: -0.037, y: -0.054, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1945232573}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1217960858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217960859}
+  m_Layer: 6
+  m_Name: Particle Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1217960859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217960858}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.126, y: -0, z: 0.007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1446962721}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1249629707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4030,6 +4093,11 @@ Transform:
   m_Father: {fileID: 126648096}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1446962721 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000013436202034, guid: 5bcbf31ded2e353449622ec74f8954da, type: 3}
+  m_PrefabInstance: {fileID: 761553035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1447418308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4699,11 +4767,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemType: 4
+  statue: 1
   amountTextVisibility: 1
   amountConversion: 0
-  multiplyAmount: 0
+  multiplyAmount: 10
   changeAmount: 2
 --- !u!1 &1569773405
 GameObject:
@@ -5152,6 +5220,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653900310}
   m_CullTransparentMesh: 1
+--- !u!4 &1654400332 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000011254254278, guid: 5bcbf31ded2e353449622ec74f8954da, type: 3}
+  m_PrefabInstance: {fileID: 761553035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714226830
 GameObject:
   m_ObjectHideFlags: 0
@@ -5390,6 +5463,9 @@ MonoBehaviour:
   baseAttackDelay: 1.133
   shield: {x: 0, y: 5, z: 0}
   healthBar: {fileID: 29761772}
+  leftHandParticlePivot: {fileID: 0}
+  rightHandParticlePivot: {fileID: 0}
+  headParticlePivot: {fileID: 0}
 --- !u!4 &1773258436
 Transform:
   m_ObjectHideFlags: 0
@@ -5502,6 +5578,36 @@ Transform:
   m_Father: {fileID: 612775848}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1792314170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1792314171}
+  m_Layer: 6
+  m_Name: Particle Pivot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1792314171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792314170}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.15, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1654400332}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1858755433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5639,6 +5745,11 @@ MonoBehaviour:
   amountConversion: 0
   multiplyAmount: 0
   changeAmount: 1.5
+--- !u!4 &1945232573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000014227989452, guid: 5bcbf31ded2e353449622ec74f8954da, type: 3}
+  m_PrefabInstance: {fileID: 761553035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1960628292
 GameObject:
   m_ObjectHideFlags: 0

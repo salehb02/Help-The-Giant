@@ -1,0 +1,1 @@
+public enum ItemType { Power, AttackSpeed, Health, Shield,Poop }

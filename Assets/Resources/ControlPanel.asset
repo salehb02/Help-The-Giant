@@ -14,30 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - type: 0
-    prefab: {fileID: -4688166447488384117, guid: 8fcdc90a3ab6b1a4688a2edd15eac5a0, type: 3}
+    prefab: {fileID: 2954385606341545309, guid: 2e3e5a5ff3f44eb43bcbe4dc61cf6de1, type: 3}
     positiveOutline: {r: 0, g: 1, b: 0, a: 1}
     negativeOutline: {r: 1, g: 0, b: 0, a: 1}
-    particleVFX: {fileID: 0}
+    particleVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
   - type: 1
     prefab: {fileID: -5982045469468564986, guid: b6b305eb3b29a8f48a0408daa6519c15, type: 3}
     positiveOutline: {r: 1, g: 0.85065913, b: 0, a: 1}
     negativeOutline: {r: 1, g: 0, b: 0, a: 1}
     particleVFX: {fileID: 0}
   - type: 2
-    prefab: {fileID: 6951519966567464433, guid: e453e4434fea3054fa733acd028e5fea, type: 3}
-    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
-    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
-    particleVFX: {fileID: 0}
-  - type: 3
     prefab: {fileID: 9207664458540473979, guid: 5db1b945829d878438466294af43bbfc, type: 3}
     positiveOutline: {r: 0, g: 1, b: 0, a: 1}
     negativeOutline: {r: 1, g: 0, b: 0, a: 1}
     particleVFX: {fileID: 0}
-  - type: 4
+  - type: 3
     prefab: {fileID: -2066558652946539435, guid: 5d068bfb4f49d2a42b20bad32892fec5, type: 3}
     positiveOutline: {r: 0, g: 1, b: 0, a: 1}
     negativeOutline: {r: 1, g: 0, b: 0, a: 1}
     particleVFX: {fileID: 0}
+  - type: 4
+    prefab: {fileID: 5233109823402980303, guid: 1c2228bbbbaf6114b889dc17fd541efd, type: 3}
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
+    particleVFX: {fileID: 6588731586107017188, guid: 00a2dd26572db424e8bca0baebd13d98, type: 3}
   positiveItemParticle: {fileID: 1113972268356879538, guid: a6505f77f7fb7e4468eeb7b8364c305c, type: 3}
   negativeItemParticle: {fileID: 5201720511701185914, guid: 13d776b542c8dbe4dbac6501aefeb3c2, type: 3}
   itemParticleLerpSpeed: 15

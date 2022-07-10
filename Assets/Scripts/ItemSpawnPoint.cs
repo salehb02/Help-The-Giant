@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class ItemSpawnPoint : MonoBehaviour
 {
-    [SerializeField] ItemType itemType;
-    [SerializeField] ItemStatue statue;
-    [SerializeField] Visibility amountTextVisibility;
-    [SerializeField] AmountConversion amountConversion;
-    [SerializeField] float multiplyAmount;
-    [SerializeField] float changeAmount = 1;
+    public ItemType itemType;
+    public ItemStatue statue;
+    public Visibility amountTextVisibility;
+    public MathOperators amountConversion;
+    public float multiplyAmount;
+    public float changeAmount = 1;
 
     private void Start()
     {
@@ -22,18 +22,36 @@ public class ItemSpawnPoint : MonoBehaviour
         if (currentItem != null)
         {
             var item = Instantiate(currentItem.prefab, transform.position, transform.rotation, transform);
-            item.SetupItem(GetEnumText(amountConversion) + multiplyAmount, amountConversion, changeAmount, multiplyAmount, statue == ItemStatue.Negative ? true : false, amountTextVisibility == Visibility.Show ? true : false);
+            item.SetupItem(this, currentItem);
         }
     }
 
-    private string GetEnumText(AmountConversion itemAmount) => itemAmount switch
+    public string GetOperatorText()
     {
-        AmountConversion.Add => "+",
-        AmountConversion.Subtract => "-",
-        AmountConversion.Multiply => "X",
-        AmountConversion.Divide => "/",
-        _ => throw new System.NotImplementedException(),
-    };
+        string result = null;
+
+        switch (amountConversion)
+        {
+            case MathOperators.Add:
+                result += "+";
+                break;
+            case MathOperators.Subtract:
+                result += "-";
+                break;
+            case MathOperators.Multiply:
+                result += "x";
+                break;
+            case MathOperators.Divide:
+                result += "/";
+                break;
+            default:
+                break;
+        }
+
+        result += multiplyAmount;
+
+        return result;
+    }
 
     private void OnDrawGizmos()
     {

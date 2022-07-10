@@ -1,0 +1,1 @@
+public enum MathOperators { Add, Subtract, Multiply, Divide }
