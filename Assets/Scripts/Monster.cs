@@ -26,6 +26,7 @@ public class Monster : MonoBehaviour
     public GameObject leftHandParticlePivot;
     public GameObject rightHandParticlePivot;
     public GameObject headParticlePivot;
+    public GameObject bodyParticlePivot;
 
     public float Health { get; private set; }
     public float Power { get; private set; }
@@ -48,6 +49,7 @@ public class Monster : MonoBehaviour
     private Animator animator;
     private Monster enemyMonster;
     private Outlinable outline;
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -58,6 +60,7 @@ public class Monster : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         outline = GetComponentInChildren<Outlinable>();
+        gameManager = FindObjectOfType<GameManager>();
 
         initScale = animator.transform.localScale;
 
@@ -86,7 +89,8 @@ public class Monster : MonoBehaviour
 
         while (IsDead == false)
         {
-            Attack();
+            if (!gameManager.IsPaused)
+                Attack();
 
             yield return new WaitForSeconds(baseAttackDelay / AttackSpeed);
         }
@@ -124,6 +128,11 @@ public class Monster : MonoBehaviour
         dead = true;
         animator?.SetTrigger(DEAD_TRIGGER);
         healthBar.gameObject.SetActive(false);
+     
+        if (allied)
+            gameManager.LoseGame();
+        else
+            gameManager.WinGame();
     }
 
     private void UpdateUI()
@@ -168,7 +177,7 @@ public class Monster : MonoBehaviour
         if (!allied)
             return;
 
-        var time = 0.2f;
+        var time = 0.15f;
         var color = item.GetOutlineColor();
 
         outline.OutlineParameters.Color = color;
@@ -176,7 +185,7 @@ public class Monster : MonoBehaviour
         outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
         outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
 
-        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time).OnComplete(() =>
+        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.25f, time).OnComplete(() =>
         {
             outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
         });
@@ -186,10 +195,12 @@ public class Monster : MonoBehaviour
             outline.OutlineParameters.DOFade(0, time);
         });
 
+        animator.transform.DOShakeScale(time, 3.5f, 15);
+
         var vfx = item.GetVFX();
 
-        if (vfx)
-            Instantiate(vfx, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
+        if (vfx && bodyParticlePivot.transform.childCount < 3)
+            Instantiate(vfx, bodyParticlePivot.transform.position, bodyParticlePivot.transform.rotation, bodyParticlePivot.transform);
     }
 
     // OnPowerPickup
@@ -245,9 +256,9 @@ public class Monster : MonoBehaviour
             AttackSpeed = Mathf.Clamp(AttackSpeed, attackSpeed.x, attackSpeed.y);
         }
 
-        var time = 0.2f;
+        var time = 0.15f;
 
-        if (item.ChangeAmount > 1)
+        if (AttackSpeed >= 1)
             animator.transform.DOScale(initScale + Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
         else
             animator.transform.DOScale(initScale - Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
@@ -261,13 +272,21 @@ public class Monster : MonoBehaviour
         outline.OutlineParameters.DOFade(0, 0);
         outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
         outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
-        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.1f, time);
-        outline.OutlineParameters.DOFade(1, time);
+
+        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.25f, time).OnComplete(() =>
+        {
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
+        });
+
+        outline.OutlineParameters.DOFade(1, time).OnComplete(() =>
+        {
+            outline.OutlineParameters.DOFade(0, time);
+        });
 
         var vfx = item.GetVFX();
 
-        if (vfx)
-            Instantiate(vfx, animator.transform.position, animator.transform.rotation * Quaternion.Euler(-90, 0, 0), animator.transform);
+        if (vfx && bodyParticlePivot.transform.childCount < 3)
+            Instantiate(vfx, bodyParticlePivot.transform.position, bodyParticlePivot.transform.rotation, bodyParticlePivot.transform);
     }
 
     private IEnumerator RevertAttackSpeedCoroutine()
@@ -276,8 +295,8 @@ public class Monster : MonoBehaviour
 
         var time = 0.2f;
         animator.transform.DOScale(initScale, time);
-        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
-        outline.OutlineParameters.DOFade(0, time);
+        //outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
+        //outline.OutlineParameters.DOFade(0, time);
         AttackSpeed = attackSpeed.z;
 
         revertAttackSpeedCoroutine = null;

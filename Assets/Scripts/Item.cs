@@ -47,7 +47,9 @@ public class Item : MonoBehaviour
         {
             if (_trailParticle)
             {
-                Instantiate(_trailParticle, transform.position, transform.rotation, transform);
+                var trailParticle = Instantiate(_trailParticle, transform.position, transform.rotation, transform).GetComponent<ParticleSystem>();
+                var trailMain = trailParticle.main;
+                trailMain.startColor = ItemClass.trailParticleColor;
             }
 
             _throwItem = true;
@@ -98,14 +100,13 @@ public class Item : MonoBehaviour
         if (Statue == ItemStatue.Negative)
         {
             _spriteRenderer.color = ControlPanel.Instance.negativeItemColor;
-            _trailParticle = ControlPanel.Instance.negativeItemParticle;
         }
         else
         {
             _spriteRenderer.color = ControlPanel.Instance.positiveItemColor;
-            _trailParticle = ControlPanel.Instance.positiveItemParticle;
         }
 
+        _trailParticle = ControlPanel.Instance.trailParticle;
         _spriteRenderer.gameObject.SetActive(itemSpawn.amountTextVisibility == Visibility.Show ? true : false);
 
         ItemClass = itemClass;
