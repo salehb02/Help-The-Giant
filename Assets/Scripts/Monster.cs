@@ -36,6 +36,7 @@ public class Monster : MonoBehaviour
     public bool IsConfused { get; private set; }
 
     private bool dead;
+    private float _currentAttackMode = 0;
     private Vector3 initScale;
     private Coroutine revertAttackSpeedCoroutine;
     private Coroutine revertPowerCoroutine;
@@ -44,6 +45,7 @@ public class Monster : MonoBehaviour
     public const string ATTACK_TRIGGER = "Attack";
     public const string DEAD_TRIGGER = "Dead";
     public const string ATTACK_SPEED = "AttackSpeed";
+    public const string ATTACK_MODE = "AttackMode";
     public const string CONFUSED_TRIGGER = "Confuse";
 
     private Animator animator;
@@ -54,6 +56,12 @@ public class Monster : MonoBehaviour
     private void Start()
     {
         Init();
+    }
+
+    private void Update()
+    {
+        animator?.SetFloat(ATTACK_SPEED, AttackSpeed);
+        animator?.SetFloat(ATTACK_MODE, _currentAttackMode);
     }
 
     public void Init()
@@ -104,7 +112,6 @@ public class Monster : MonoBehaviour
         if (IsConfused)
             return;
 
-        animator?.SetFloat(ATTACK_SPEED, AttackSpeed);
         animator?.SetTrigger(ATTACK_TRIGGER);
 
         if (enemyMonster)
@@ -215,6 +222,7 @@ public class Monster : MonoBehaviour
         {
             Power = GetChangeAmount(Power, item);
             Power = Mathf.Clamp(Power, power.x, power.y);
+            _currentAttackMode = 1;
         }
 
         var vfx = item.GetVFX();
@@ -239,6 +247,7 @@ public class Monster : MonoBehaviour
             Destroy(obj.gameObject);
 
         Power = power.z;
+        _currentAttackMode = 0;
         revertPowerCoroutine = null;
     }
 
