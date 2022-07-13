@@ -93,7 +93,7 @@ public class Monster : MonoBehaviour
     private IEnumerator CheckAttackCoroutine()
     {
         // Warm up
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(allied ? 0.8f : 0.5f);
 
         while (IsDead == false)
         {
