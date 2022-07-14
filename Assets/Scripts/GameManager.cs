@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey(CurrentLevel))
-            SceneManager.LoadScene(PlayerPrefs.GetInt(CurrentLevel));
+        if (SceneManager.GetActiveScene().buildIndex != PlayerPrefs.GetInt(CurrentLevel, 0))
+            SceneManager.LoadScene(PlayerPrefs.GetInt(CurrentLevel, 0));
     }
 
     private void Start()
@@ -42,18 +42,20 @@ public class GameManager : MonoBehaviour
         IsPaused = true;
         _presentor.SetLosePanelActivation(true);
     }
-    
+
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void NextLevel()
     {
         var currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentLevelIndex < SceneManager.sceneCount)
+        if (currentLevelIndex < SceneManager.sceneCountInBuildSettings - 1)
             currentLevelIndex++;
+        else
+            currentLevelIndex = UnityEngine.Random.Range(0, SceneManager.sceneCountInBuildSettings);
 
         PlayerPrefs.SetInt(CurrentLevel, currentLevelIndex);
         SceneManager.LoadScene(currentLevelIndex);

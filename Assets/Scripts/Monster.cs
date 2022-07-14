@@ -268,9 +268,9 @@ public class Monster : MonoBehaviour
         var time = 0.15f;
 
         if (AttackSpeed >= 1)
-            animator.transform.DOScale(initScale + Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
+            animator.transform.DOScale(initScale + Vector3.one * 1.5f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
         else
-            animator.transform.DOScale(initScale - Vector3.one * 3f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
+            animator.transform.DOScale(initScale - Vector3.one * 1.5f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
 
         if (!allied)
             return;
