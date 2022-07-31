@@ -10965,6 +10965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monsters Holder 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3831160682424599859, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3831160682619073214, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -10976,6 +10980,30 @@ PrefabInstance:
     - target: {fileID: 3831160683499497132, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
       propertyPath: m_text
       value: Friend
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683663884425, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683663884425, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683663884425, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683790790330, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.637
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683790790330, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683790790330, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.637
       objectReference: {fileID: 0}
     - target: {fileID: 3831160683925639426, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
