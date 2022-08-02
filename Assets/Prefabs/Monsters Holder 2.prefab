@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allied: 0
-  health: {x: 0, y: 500, z: 500}
+  health: {x: 0, y: 200, z: 200}
   power: {x: 1, y: 20, z: 10}
   attackSpeed: {x: 0.5, y: 3, z: 1}
   baseAttackDelay: 1.133
@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 37.13}
+  m_AnchoredPosition: {x: 0, y: 31.7}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3831160682179580142
@@ -424,8 +424,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3831160682344942176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.09098128, y: 0.52993524, z: 0.057316426, w: 0.84119314}
+  m_LocalPosition: {x: 0, y: 0, z: 1.7}
   m_LocalScale: {x: 0.10564, y: 0.10564, z: 0.10564}
   m_Children:
   - {fileID: 3831160683587858054}
@@ -434,7 +434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 37.13}
+  m_AnchoredPosition: {x: -0.8, y: 28.9}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3831160682344942204
@@ -565,7 +565,7 @@ Transform:
   m_GameObject: {fileID: 3831160682424599859}
   m_LocalRotation: {x: 0, y: -0.53302383, z: 0, w: 0.8461002}
   m_LocalPosition: {x: -24.29, y: -17.954, z: 79.3}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.71873724, y: 0.71873724, z: 0.71873724}
   m_Children:
   - {fileID: 3831160683925639428}
   - {fileID: 3831160682107084331}
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allied: 1
-  health: {x: 0, y: 500, z: 500}
+  health: {x: 0, y: 200, z: 200}
   power: {x: 1, y: 20, z: 10}
   attackSpeed: {x: 0.5, y: 3, z: 1}
   baseAttackDelay: 1.133
@@ -1991,7 +1991,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a193c17681cc068439a113a6faa1f6a0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2148,7 +2148,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a193c17681cc068439a113a6faa1f6a0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
