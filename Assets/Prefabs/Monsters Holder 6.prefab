@@ -1974,6 +1974,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 395824350673313171, guid: fa28ba5535b03ef4bb9a1b9f58ca85dc, type: 3}
   m_PrefabInstance: {fileID: 3376747745017858205}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &3376747745017858180
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458393646369158604}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fa28ba5535b03ef4bb9a1b9f58ca85dc, type: 3}
+  m_Controller: {fileID: 9100000, guid: a193c17681cc068439a113a6faa1f6a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &3376747745017858181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1987,25 +2006,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4126151, y: 0.43112093, z: 1.6288799}
   m_Center: {x: -0.00000008916507, y: 0.017424628, z: 0.80691254}
---- !u!95 &3376747745017858180
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2458393646369158604}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b155324406dc3349959181823ecde66, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3376747745233520095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2128,8 +2128,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2458393646717991054}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b155324406dc3349959181823ecde66, type: 2}
+  m_Avatar: {fileID: 9000000, guid: fa28ba5535b03ef4bb9a1b9f58ca85dc, type: 3}
+  m_Controller: {fileID: 9100000, guid: a193c17681cc068439a113a6faa1f6a0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
