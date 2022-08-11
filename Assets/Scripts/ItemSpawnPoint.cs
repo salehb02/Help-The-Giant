@@ -1,14 +1,15 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ItemSpawnPoint : MonoBehaviour
+public class ItemSpawnPoint : MonoBehaviour,ISerializationCallbackReceiver
 {
-    public ItemType itemType;
-    public ItemStatue statue;
+    public static List<string> Items;
+    [ListToPopup(typeof(ItemSpawnPoint), "Items")]
+    public string itemTitle;
     public Visibility amountTextVisibility;
-    public MathOperators amountConversion;
-    public float multiplyAmount;
-    public float changeAmount = 1;
+
+    private ControlPanel.ItemClass item;
 
     private void Start()
     {
@@ -17,12 +18,12 @@ public class ItemSpawnPoint : MonoBehaviour
 
     private void InstantiateItem()
     {
-        var currentItem = ControlPanel.Instance.items.SingleOrDefault(x => x.type == itemType);
+        item = ControlPanel.Instance.items.SingleOrDefault(x => x.title == itemTitle);
 
-        if (currentItem != null)
+        if (item != null)
         {
-            var item = Instantiate(currentItem.prefab, transform.position, transform.rotation, transform);
-            item.SetupItem(this, currentItem);
+            var instancedItem = Instantiate(item.prefab, transform.position, transform.rotation, transform);
+            instancedItem.SetupItem(this, item);
         }
     }
 
@@ -30,7 +31,7 @@ public class ItemSpawnPoint : MonoBehaviour
     {
         string result = null;
 
-        switch (amountConversion)
+        switch (item.amountConversion)
         {
             case MathOperators.Add:
                 result += "+";
@@ -48,7 +49,7 @@ public class ItemSpawnPoint : MonoBehaviour
                 break;
         }
 
-        result += multiplyAmount;
+        result += item.multiplyAmount;
 
         return result;
     }
@@ -57,5 +58,24 @@ public class ItemSpawnPoint : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(transform.position, 0.3f);
+    }
+
+    private List<string> GetAllItemTitles()
+    {
+        var titles = new List<string>();
+
+        foreach (var item in ControlPanel.Instance.items)
+            titles.Add(item.title);
+
+        return titles;
+    }
+
+    public void OnBeforeSerialize()
+    {
+        Items = GetAllItemTitles();
+    }
+
+    public void OnAfterDeserialize()
+    {
     }
 }

@@ -241,12 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &30634598
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,12 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &102520727
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,12 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &121055076
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,12 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &126648092
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,12 +622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &146748456
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,12 +667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &155239694
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,12 +851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &195504055
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,12 +896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &201097902
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,12 +941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &204418473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,12 +1018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &234891195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,12 +1158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &248980679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,12 +1203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &251309474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,12 +1248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &295956594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,12 +1495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &338838423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,12 +1671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &379771653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,12 +1811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &387863440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,12 +1856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &401557549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,12 +1901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &402596349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,12 +1946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &403107281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,12 +1991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &417364437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,12 +2036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &427074246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,12 +2176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &451832152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,12 +2430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &495735306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,12 +2748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &559246130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,12 +2793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &566836786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,12 +2838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &568748667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,12 +3017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &588609958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,12 +3327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &612775847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3556,12 +3444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: Lighting
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &618617184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,12 +3489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &626287592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3654,12 +3534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &639469739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,12 +3735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &646768979
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,12 +3780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &677702120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,12 +3825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &681021973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,12 +3870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &687079993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4055,12 +3915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &690866891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,12 +3960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &701566586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,12 +4005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &708918044
 GameObject:
   m_ObjectHideFlags: 0
@@ -4418,12 +4266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &719129675
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,12 +4311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &799804927
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,12 +4356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &802092404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4660,12 +4496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &851909187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4709,12 +4541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &874117950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,12 +4738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &945014613
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,12 +4783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &962355117
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,12 +4923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &970843951
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,12 +5387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &1011372580
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,12 +5661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1036160797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6088,12 +5896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1087869333
 GameObject:
   m_ObjectHideFlags: 0
@@ -6137,12 +5941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1108182399
 GameObject:
   m_ObjectHideFlags: 0
@@ -6186,12 +5986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1119830758
 GameObject:
   m_ObjectHideFlags: 0
@@ -6235,12 +6031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1139843575
 GameObject:
   m_ObjectHideFlags: 0
@@ -6284,12 +6076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1149813486
 GameObject:
   m_ObjectHideFlags: 0
@@ -6649,12 +6437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1253300067
 GameObject:
   m_ObjectHideFlags: 0
@@ -6698,12 +6482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1265725173
 GameObject:
   m_ObjectHideFlags: 0
@@ -6747,12 +6527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1282420932
 GameObject:
   m_ObjectHideFlags: 0
@@ -6986,12 +6762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1321824858
 GameObject:
   m_ObjectHideFlags: 0
@@ -7035,12 +6807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1325109310
 GameObject:
   m_ObjectHideFlags: 0
@@ -7084,12 +6852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1367183935
 GameObject:
   m_ObjectHideFlags: 0
@@ -7133,12 +6897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1382785551
 GameObject:
   m_ObjectHideFlags: 0
@@ -7277,12 +7037,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1392605549
 GameObject:
   m_ObjectHideFlags: 0
@@ -7326,12 +7082,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1398744265
 GameObject:
   m_ObjectHideFlags: 0
@@ -7375,12 +7127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1420428665
 GameObject:
   m_ObjectHideFlags: 0
@@ -7454,12 +7202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: Lighting
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1452974183
 GameObject:
   m_ObjectHideFlags: 0
@@ -7503,12 +7247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: Lighting
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1466343492
 GameObject:
   m_ObjectHideFlags: 0
@@ -7552,12 +7292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1486032644
 GameObject:
   m_ObjectHideFlags: 0
@@ -7601,12 +7337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1514323758
 GameObject:
   m_ObjectHideFlags: 0
@@ -7650,12 +7382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1552959872
 GameObject:
   m_ObjectHideFlags: 0
@@ -7699,12 +7427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1568673366
 GameObject:
   m_ObjectHideFlags: 0
@@ -7748,12 +7472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1569773405
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,12 +7699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1601324728
 GameObject:
   m_ObjectHideFlags: 0
@@ -8028,12 +7744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1626119980
 GameObject:
   m_ObjectHideFlags: 0
@@ -8115,12 +7827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1661870923
 GameObject:
   m_ObjectHideFlags: 0
@@ -8164,12 +7872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &1707716954
 GameObject:
   m_ObjectHideFlags: 0
@@ -8213,12 +7917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1710135903
 GameObject:
   m_ObjectHideFlags: 0
@@ -8262,12 +7962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1718457042
 GameObject:
   m_ObjectHideFlags: 0
@@ -8501,12 +8197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1745267491
 GameObject:
   m_ObjectHideFlags: 0
@@ -8891,12 +8583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1775418188
 GameObject:
   m_ObjectHideFlags: 0
@@ -9036,12 +8724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &1786902245
 GameObject:
   m_ObjectHideFlags: 0
@@ -9085,12 +8769,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1798469450
 GameObject:
   m_ObjectHideFlags: 0
@@ -9134,12 +8814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1816519523
 GameObject:
   m_ObjectHideFlags: 0
@@ -9183,12 +8859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1820463776
 GameObject:
   m_ObjectHideFlags: 0
@@ -9232,12 +8904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1836039079
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,12 +8949,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &1877507114
 GameObject:
   m_ObjectHideFlags: 0
@@ -9330,12 +8994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1878308831
 GameObject:
   m_ObjectHideFlags: 0
@@ -9379,12 +9039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1883214358
 GameObject:
   m_ObjectHideFlags: 0
@@ -9657,12 +9313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &1905114356
 GameObject:
   m_ObjectHideFlags: 0
@@ -9706,12 +9358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2.5
-  changeAmount: 0.85
 --- !u!1 &1912696945
 GameObject:
   m_ObjectHideFlags: 0
@@ -9755,12 +9403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1936753448
 GameObject:
   m_ObjectHideFlags: 0
@@ -9804,12 +9448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1960628292
 GameObject:
   m_ObjectHideFlags: 0
@@ -9883,12 +9523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &1993536734
 GameObject:
   m_ObjectHideFlags: 0
@@ -9964,12 +9600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &2021928021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10201,12 +9833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &2076566060
 GameObject:
   m_ObjectHideFlags: 0
@@ -10250,12 +9878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &2135398191
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,12 +9923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23427cbdfb540164599ee4868acc46c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
-  statue: 0
+  itemTitle: 
   amountTextVisibility: 1
-  amountConversion: 2
-  multiplyAmount: 2
-  changeAmount: 0.85
 --- !u!1 &61770651896312102
 GameObject:
   m_ObjectHideFlags: 0
@@ -10857,6 +10477,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 295956596}
     m_Modifications:
+    - target: {fileID: 3648405164436917784, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 27.4275
+      objectReference: {fileID: 0}
     - target: {fileID: 3831160681965431998, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -10922,8 +10546,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3831160683925639426, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
-      propertyPath: outlineTargets.Array.data[0].IsVisible
+      propertyPath: outlineParameters.color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683925639426, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: outlineParameters.color.g
+      value: 0.95960426
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683925639426, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: outlineParameters.color.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683925639426, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683925639428, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831160683925639428, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c17ec35bbd123148a5d3a33c15c7311, type: 3}

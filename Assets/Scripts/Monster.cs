@@ -1,9 +1,10 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using EPOOutline;
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Monster : MonoBehaviour
 {
@@ -38,9 +39,6 @@ public class Monster : MonoBehaviour
     private bool dead;
     private float _currentAttackMode = 0;
     private Vector3 initScale;
-    private Coroutine revertAttackSpeedCoroutine;
-    private Coroutine revertPowerCoroutine;
-    private Coroutine revertPoopCoroutine;
 
     public const string ATTACK_TRIGGER = "Attack";
     public const string DEAD_TRIGGER = "Dead";
@@ -52,6 +50,21 @@ public class Monster : MonoBehaviour
     private Monster enemyMonster;
     private Outlinable outline;
     private GameManager gameManager;
+
+    private List<PowerUpCoroutine> coroutines = new List<PowerUpCoroutine>();
+
+    [System.Serializable]
+    public class PowerUpCoroutine
+    {
+        public ControlPanel.ItemClass itemClass;
+        public Coroutine coroutine;
+
+        public PowerUpCoroutine(ControlPanel.ItemClass itemClass, Coroutine coroutine)
+        {
+            this.itemClass = itemClass;
+            this.coroutine = coroutine;
+        }
+    }
 
     private void Start()
     {
@@ -76,10 +89,7 @@ public class Monster : MonoBehaviour
             if (monster != this)
                 enemyMonster = monster;
 
-        InitHealth();
-        InitPower();
-        InitAttackSpeed();
-        InitShield();
+        InitMonster();
 
         StartCoroutine(CheckAttackCoroutine());
 
@@ -88,6 +98,18 @@ public class Monster : MonoBehaviour
             outline.OutlineParameters.DOFade(0, 0);
             outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
         }
+    }
+
+    private void InitMonster()
+    {
+        Health = health.z;
+
+        healthBar.minValue = health.x;
+        healthBar.maxValue = health.y;
+        UpdateUI(); Power = power.z;
+
+        AttackSpeed = attackSpeed.z;
+        Shield = shield.z;
     }
 
     private IEnumerator CheckAttackCoroutine()
@@ -135,7 +157,7 @@ public class Monster : MonoBehaviour
         dead = true;
         animator?.SetTrigger(DEAD_TRIGGER);
         healthBar.gameObject.SetActive(false);
-     
+
         if (allied)
             gameManager.LoseGame();
         else
@@ -147,207 +169,137 @@ public class Monster : MonoBehaviour
         healthBar.value = Health;
     }
 
-    private void InitHealth()
+    // OnPowerupPiuckup
+    public void PowerUpAffection(Item item)
     {
-        Health = health.z;
+        var similarCoroutine = coroutines.SingleOrDefault(x => x.itemClass.GetHashCode() == item.ItemClass.GetHashCode());
 
-        healthBar.minValue = health.x;
-        healthBar.maxValue = health.y;
-        UpdateUI();
-    }
-
-    private void InitPower()
-    {
-        Power = power.z;
-    }
-
-    private void InitAttackSpeed()
-    {
-        AttackSpeed = attackSpeed.z;
-    }
-
-    private void InitShield()
-    {
-        Shield = shield.z;
-    }
-
-    // OnHealthPickup
-    public void ChangeHealth(Item item)
-    {
-        Health = GetChangeAmount(Health, item);
-        Health = Mathf.Clamp(Health, health.x, health.y);
-        UpdateUI();
-
-        if (Health <= 0)
-            Die();
-
-        if (!allied)
-            return;
-
-        var time = 0.15f;
-        var color = item.GetOutlineColor();
-
-        outline.OutlineParameters.Color = color;
-        outline.OutlineParameters.DOFade(0, 0);
-        outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
-        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
-
-        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.25f, time).OnComplete(() =>
+        if (similarCoroutine != null)
         {
-            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
-        });
-
-        outline.OutlineParameters.DOFade(1, time).OnComplete(() =>
-        {
-            outline.OutlineParameters.DOFade(0, time);
-        });
-
-        animator.transform.DOShakeScale(time, 3.5f, 15);
-
-        var vfx = item.GetVFX();
-
-        if (vfx && bodyParticlePivot.transform.childCount < 3)
-            Instantiate(vfx, bodyParticlePivot.transform.position, bodyParticlePivot.transform.rotation, bodyParticlePivot.transform);
-    }
-
-    // OnPowerPickup
-    public void PowerAffection(Item item)
-    {
-        if (revertPowerCoroutine != null)
-        {
-            StopCoroutine(revertPowerCoroutine);
-            revertPowerCoroutine = null;
-        }
-        else
-        {
-            Power = GetChangeAmount(Power, item);
-            Power = Mathf.Clamp(Power, power.x, power.y);
-            _currentAttackMode = 1;
+            StopCoroutine(similarCoroutine.coroutine);
+            coroutines.Remove(similarCoroutine);
         }
 
-        var vfx = item.GetVFX();
-
-        if (rightHandParticlePivot.transform.childCount == 0 && vfx)
-            Instantiate(vfx, rightHandParticlePivot.transform.position, rightHandParticlePivot.transform.rotation, rightHandParticlePivot.transform);
-
-        if (leftHandParticlePivot.transform.childCount == 0 && vfx)
-            Instantiate(vfx, leftHandParticlePivot.transform.position, leftHandParticlePivot.transform.rotation, leftHandParticlePivot.transform);
-
-        revertPowerCoroutine = StartCoroutine(RevertPowerCoroutine());
-    }
-
-    private IEnumerator RevertPowerCoroutine()
-    {
-        yield return new WaitForSeconds(1f);
-
-        foreach (Transform obj in rightHandParticlePivot.transform)
-            Destroy(obj.gameObject);
-
-        foreach (Transform obj in leftHandParticlePivot.transform)
-            Destroy(obj.gameObject);
-
-        Power = power.z;
-        _currentAttackMode = 0;
-        revertPowerCoroutine = null;
-    }
-
-    // OnAttackSpeedPickup
-    public void AttackSpeedAffection(Item item)
-    {
-        if (revertAttackSpeedCoroutine != null)
+        switch (item.ItemClass.type)
         {
-            StopCoroutine(revertAttackSpeedCoroutine);
-            revertAttackSpeedCoroutine = null;
-        }
-        else
-        {
-            AttackSpeed = GetChangeAmount(AttackSpeed, item);
-            AttackSpeed = Mathf.Clamp(AttackSpeed, attackSpeed.x, attackSpeed.y);
+            case ItemType.Power:
+                Power = GetChangeAmount(Power, item);
+                Power = Mathf.Clamp(Power, power.x, power.y);
+                _currentAttackMode = 1;
+                break;
+            case ItemType.AttackSpeed:
+                AttackSpeed = GetChangeAmount(AttackSpeed, item);
+                AttackSpeed = Mathf.Clamp(AttackSpeed, attackSpeed.x, attackSpeed.y);
+                break;
+            case ItemType.Health:
+                Health = GetChangeAmount(Health, item);
+                Health = Mathf.Clamp(Health, health.x, health.y);
+                UpdateUI();
+
+                if (Health <= 0)
+                    Die();
+                break;
+            case ItemType.Shield:
+                Shield += item.ChangeAmount;
+                Shield = Mathf.Clamp(Shield, shield.x, shield.y);
+                break;
+            case ItemType.Confuser:
+                IsConfused = true;
+                animator.SetTrigger(CONFUSED_TRIGGER);
+                break;
+            default:
+                break;
         }
 
         var time = 0.15f;
 
-        if (AttackSpeed >= 1)
-            animator.transform.DOScale(initScale + Vector3.one * 1.5f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
-        else
-            animator.transform.DOScale(initScale - Vector3.one * 1.5f, time).OnComplete(() => revertAttackSpeedCoroutine = StartCoroutine(RevertAttackSpeedCoroutine()));
+        if (item.ItemClass.changeSize)
+            animator.transform.DOScale(initScale + Vector3.one * item.ItemClass.changeSizeAmount, time);
+
+        if (item.ItemClass.shakeOnAffection)
+            animator.transform.DOShakeScale(time, item.ItemClass.shakeStrength, item.ItemClass.shakeVibrato);
 
         if (!allied)
             return;
 
-        var color = item.GetOutlineColor();
-
-        outline.OutlineParameters.Color = color;
-        outline.OutlineParameters.DOFade(0, 0);
-        outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
-        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
-
-        outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.25f, time).OnComplete(() =>
+        if (item.ItemClass.changeOutlineColor)
         {
-            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
-        });
+            var color = item.ItemClass.positiveOutline;
 
-        outline.OutlineParameters.DOFade(1, time).OnComplete(() =>
-        {
-            outline.OutlineParameters.DOFade(0, time);
-        });
+            outline.OutlineParameters.Color = color;
+            outline.OutlineParameters.DOFade(0, 0);
+            outline.OutlineParameters.FillPass.SetColor("_PublicColor", color);
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, 0);
 
-        var vfx = item.GetVFX();
+            outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0.25f, time).OnComplete(() =>
+            {
+                outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
+            });
 
-        if (vfx && bodyParticlePivot.transform.childCount < 3)
-            Instantiate(vfx, bodyParticlePivot.transform.position, bodyParticlePivot.transform.rotation, bodyParticlePivot.transform);
-    }
-
-    private IEnumerator RevertAttackSpeedCoroutine()
-    {
-        yield return new WaitForSeconds(1f);
-
-        var time = 0.2f;
-        animator.transform.DOScale(initScale, time);
-        //outline.OutlineParameters.FillPass.DOFade("_PublicColor", 0, time);
-        //outline.OutlineParameters.DOFade(0, time);
-        AttackSpeed = attackSpeed.z;
-
-        revertAttackSpeedCoroutine = null;
-    }
-
-    // OnPoopPickup
-    public void PoopAffection(Item item)
-    {
-        if (revertPoopCoroutine != null)
-        {
-            StopCoroutine(revertPoopCoroutine);
-            revertPoopCoroutine = null;
-        }
-        else
-        {
-            IsConfused = true;
-            animator.SetTrigger(CONFUSED_TRIGGER);
+            outline.OutlineParameters.DOFade(1, time).OnComplete(() =>
+            {
+                outline.OutlineParameters.DOFade(0, time);
+            });
         }
 
-        if (headParticlePivot.transform.childCount == 0)
-            Instantiate(item.GetVFX(), headParticlePivot.transform.position, headParticlePivot.transform.rotation, headParticlePivot.transform);
+        if (item.ItemClass.headVFX && headParticlePivot.transform.childCount == 0)
+            Instantiate(item.ItemClass.headVFX, headParticlePivot.transform.position, headParticlePivot.transform.rotation, headParticlePivot.transform);
 
-        revertPoopCoroutine = StartCoroutine(RevertPoopCoroutine());
+        if (item.ItemClass.rightHandVFX && rightHandParticlePivot.transform.childCount == 0)
+            Instantiate(item.ItemClass.rightHandVFX, rightHandParticlePivot.transform.position, rightHandParticlePivot.transform.rotation, rightHandParticlePivot.transform);
+
+        if (item.ItemClass.leftHandVFX && leftHandParticlePivot.transform.childCount == 0)
+            Instantiate(item.ItemClass.leftHandVFX, leftHandParticlePivot.transform.position, leftHandParticlePivot.transform.rotation, leftHandParticlePivot.transform);
+
+        if (item.ItemClass.bodyVFX && bodyParticlePivot.transform.childCount < 3)
+            Instantiate(item.ItemClass.bodyVFX, bodyParticlePivot.transform.position, bodyParticlePivot.transform.rotation, bodyParticlePivot.transform);
+
+        var startedCoroutine = StartCoroutine(RevertPowerUpAffection(item));
+        coroutines.Add(new PowerUpCoroutine(item.ItemClass, startedCoroutine));
     }
 
-    private IEnumerator RevertPoopCoroutine()
+    private IEnumerator RevertPowerUpAffection(Item item)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(item.ItemClass.affectTime);
 
-        IsConfused = false;
+        var time = 0.15f;
 
-        foreach (Transform particle in headParticlePivot.transform)
-            Destroy(particle.gameObject);
+        switch (item.ItemClass.type)
+        {
+            case ItemType.Power:
+                Power = power.z;
+                _currentAttackMode = 0;
+                break;
+            case ItemType.AttackSpeed:
+                AttackSpeed = attackSpeed.z;
+                break;
+            case ItemType.Confuser:
+                IsConfused = false;
+                break;
+            default:
+                break;
+        }
 
-        revertPoopCoroutine = null;
-    }
+        if (item.ItemClass.changeSize)
+            animator.transform.DOScale(initScale, time);
 
-    // OnShieldPickup
-    public void ChangeShield(Item item)
-    {
-        Shield += item.ChangeAmount;
-        Shield = Mathf.Clamp(Shield, shield.x, shield.y);
+        if (item.ItemClass.destroyVFXOnEnd)
+        {
+            foreach (Transform particle in headParticlePivot.transform)
+                Destroy(particle.gameObject);
+
+            foreach (Transform obj in rightHandParticlePivot.transform)
+                Destroy(obj.gameObject);
+
+            foreach (Transform obj in leftHandParticlePivot.transform)
+                Destroy(obj.gameObject);
+
+            foreach (Transform obj in bodyParticlePivot.transform)
+                Destroy(obj.gameObject);
+        }
+
+        var toRemoveCoroutine = coroutines.SingleOrDefault(x => x.itemClass.GetHashCode() == item.ItemClass.GetHashCode());
+        coroutines.Remove(toRemoveCoroutine);
     }
 
     private float GetChangeAmount(float currentValue, Item item)

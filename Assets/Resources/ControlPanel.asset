@@ -13,36 +13,384 @@ MonoBehaviour:
   m_Name: ControlPanel
   m_EditorClassIdentifier: 
   items:
-  - type: 0
-    prefab: {fileID: 2954385606341545309, guid: 2e3e5a5ff3f44eb43bcbe4dc61cf6de1, type: 3}
-    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
-    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
-    trailParticleColor: {r: 1, g: 0.17254902, b: 0, a: 1}
-    particleVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
-  - type: 1
-    prefab: {fileID: -5982045469468564986, guid: b6b305eb3b29a8f48a0408daa6519c15, type: 3}
+  - title: Lighting
+    type: 1
+    prefab: {fileID: 3800929669699213993, guid: 8be9e830ffbe971438746906fb866f41, type: 3}
+    statue: 0
+    amountConversion: 2
+    multiplyAmount: 2.5
+    changeAmount: 0.85
+    affectTime: 1
+    changeOutlineColor: 1
     positiveOutline: {r: 1, g: 0.85065913, b: 0, a: 1}
-    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
     trailParticleColor: {r: 1, g: 0.9411765, b: 0, a: 1}
-    particleVFX: {fileID: 1059089198573617864, guid: ca4073ecb7d1abd4d9b7a257fa3f46bf, type: 3}
-  - type: 2
-    prefab: {fileID: 9207664458540473979, guid: 5db1b945829d878438466294af43bbfc, type: 3}
+    changeSize: 1
+    changeSizeAmount: 1.5
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 1059089198573617864, guid: ca4073ecb7d1abd4d9b7a257fa3f46bf, type: 3}
+    destroyVFXOnEnd: 0
+  - title: Energy Drink
+    type: 1
+    prefab: {fileID: 1625425846581782063, guid: a4f310f117c9e5044a8b427f6173e778, type: 3}
+    statue: 0
+    amountConversion: 2
+    multiplyAmount: 2.5
+    changeAmount: 0.85
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 1, g: 0.85065913, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0.9411765, b: 0, a: 1}
+    changeSize: 1
+    changeSizeAmount: 1.5
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 1059089198573617864, guid: ca4073ecb7d1abd4d9b7a257fa3f46bf, type: 3}
+    destroyVFXOnEnd: 0
+  - title: Speedometer
+    type: 1
+    prefab: {fileID: 3815601355268285997, guid: 8e3bfc3cd89e21e4f88d64f97eee8681, type: 3}
+    statue: 0
+    amountConversion: 2
+    multiplyAmount: 2.5
+    changeAmount: 0.85
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 1, g: 0.85065913, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0.9411765, b: 0, a: 1}
+    changeSize: 1
+    changeSizeAmount: 1.5
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 1059089198573617864, guid: ca4073ecb7d1abd4d9b7a257fa3f46bf, type: 3}
+    destroyVFXOnEnd: 0
+  - title: Slowmotion Watch
+    type: 1
+    prefab: {fileID: 588918454490750204, guid: d2e7c9e3a2f9169498063e41d6b6d0ec, type: 3}
+    statue: 1
+    amountConversion: 2
+    multiplyAmount: 2.5
+    changeAmount: 2
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 1, g: 0.85065913, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0.9411765, b: 0, a: 1}
+    changeSize: 1
+    changeSizeAmount: -1.5
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 1059089198573617864, guid: ca4073ecb7d1abd4d9b7a257fa3f46bf, type: 3}
+    destroyVFXOnEnd: 0
+  - title: Ice
+    type: 1
+    prefab: {fileID: 142089549330781321, guid: 3798b2295905f6c45b6fcdad0d519bd6, type: 3}
+    statue: 1
+    amountConversion: 2
+    multiplyAmount: 2.5
+    changeAmount: 2.5
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 0, g: 0.9607843, b: 1, a: 1}
+    trailParticleColor: {r: 1, g: 0.9411765, b: 0, a: 1}
+    changeSize: 1
+    changeSizeAmount: -1.5
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 1059089198573617864, guid: fcea72af41c6ab4439926c4cf8c8c41e, type: 3}
+    destroyVFXOnEnd: 0
+  - title: Gloves
+    type: 0
+    prefab: {fileID: 8868618186285844007, guid: d3a8cc73ae5166b4ca185e173ed1ffc6, type: 3}
+    statue: 0
+    amountConversion: 2
+    multiplyAmount: 2
+    changeAmount: 0.7
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 1, g: 0.027672686, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0, b: 0.044383526, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    leftHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Hulk Fist
+    type: 0
+    prefab: {fileID: 7080375402720121476, guid: 193255bf265c5fb4485e719e05eec20b, type: 3}
+    statue: 0
+    amountConversion: 2
+    multiplyAmount: 2
+    changeAmount: 0.7
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 0.13239266, g: 0.7830189, b: 0, a: 1}
+    trailParticleColor: {r: 0.13333334, g: 0.78431374, b: 0, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    leftHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: T-Rex Claw
+    type: 0
+    prefab: {fileID: 2844378897548739078, guid: c0285ce2c8bdbbc4aa3f2dde39266abf, type: 3}
+    statue: 0
+    amountConversion: 2
+    multiplyAmount: 2
+    changeAmount: 0.7
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 0.13239266, g: 0.7830189, b: 0, a: 1}
+    trailParticleColor: {r: 0.13333334, g: 0.78431374, b: 0, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    leftHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Thanos Glove
+    type: 0
+    prefab: {fileID: 6663990967448553711, guid: bc428356b3046a5439eb60d531fc5746, type: 3}
+    statue: 0
+    amountConversion: 2
+    multiplyAmount: 2
+    changeAmount: 0.7
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 0.13239266, g: 0.7830189, b: 0, a: 1}
+    trailParticleColor: {r: 0.13333334, g: 0.78431374, b: 0, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    leftHandVFX: {fileID: 149928, guid: 0b5e7793d4d1e854385c5ce9b1e79f47, type: 3}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Shield
+    type: 3
+    prefab: {fileID: 6030192968253080688, guid: 1ec2902ea7f4a7b4493b19b16e474e48, type: 3}
+    statue: 0
+    amountConversion: 0
+    multiplyAmount: 0
+    changeAmount: 1
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 0.2024742, g: 0.544457, b: 0.6603774, a: 1}
+    trailParticleColor: {r: 0.26873443, g: 0.5062456, b: 0.5754717, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 1
+    shakeStrength: 2
+    shakeVibrato: 10
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 0
+  - title: Captain America Shield
+    type: 3
+    prefab: {fileID: 440063254248774813, guid: 69d4545144651544683c0230c20e8c61, type: 3}
+    statue: 0
+    amountConversion: 0
+    multiplyAmount: 0
+    changeAmount: 1
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 1, g: 0.01900063, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0.026395835, b: 0, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 1
+    shakeStrength: 2
+    shakeVibrato: 10
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 0
+  - title: Poop
+    type: 4
+    prefab: {fileID: 1017010086456514983, guid: d9bb7c03e2b06254386cd9059bcf6919, type: 3}
+    statue: 1
+    amountConversion: 0
+    multiplyAmount: 0
+    changeAmount: 1
+    affectTime: 1
+    changeOutlineColor: 0
     positiveOutline: {r: 0, g: 1, b: 0, a: 1}
-    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
-    trailParticleColor: {r: 1, g: 0.17254902, b: 0, a: 1}
-    particleVFX: {fileID: 105942, guid: ff672eaca96d32c419d7a1f1b0346e8d, type: 3}
-  - type: 3
-    prefab: {fileID: -2066558652946539435, guid: 5d068bfb4f49d2a42b20bad32892fec5, type: 3}
-    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
-    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
-    trailParticleColor: {r: 0.9843137, g: 0.6862745, b: 1, a: 1}
-    particleVFX: {fileID: 0}
-  - type: 4
-    prefab: {fileID: 5233109823402980303, guid: 1c2228bbbbaf6114b889dc17fd541efd, type: 3}
-    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
-    negativeOutline: {r: 1, g: 0, b: 0, a: 1}
     trailParticleColor: {r: 0.8117647, g: 0.39215687, b: 0, a: 1}
-    particleVFX: {fileID: 6588731586107017188, guid: 00a2dd26572db424e8bca0baebd13d98, type: 3}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 6588731586107017188, guid: 00a2dd26572db424e8bca0baebd13d98, type: 3}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Poision
+    type: 4
+    prefab: {fileID: 8792829531665788654, guid: 1655c239c47508d41a19f6d556b6d8a2, type: 3}
+    statue: 1
+    amountConversion: 0
+    multiplyAmount: 0
+    changeAmount: 1
+    affectTime: 1
+    changeOutlineColor: 0
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    trailParticleColor: {r: 0.23596531, g: 0.5566038, b: 0.007876454, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 6588731586107017188, guid: a50b24421ee686a4699a9f58fc8503a6, type: 3}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Hypnotic Capsule
+    type: 4
+    prefab: {fileID: 4355547842750435321, guid: 006bc3389c7650e4fa647663c2b1c614, type: 3}
+    statue: 1
+    amountConversion: 0
+    multiplyAmount: 0
+    changeAmount: 1
+    affectTime: 1
+    changeOutlineColor: 0
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    trailParticleColor: {r: 0, g: 0.77702403, b: 1, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 6588731586107017188, guid: e31db52d69513614a8f8a6a6bf8421ab, type: 3}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Plastic Hammer
+    type: 4
+    prefab: {fileID: 8309942758570068369, guid: d6ba10d1de184f64c9561568fe6fee52, type: 3}
+    statue: 1
+    amountConversion: 0
+    multiplyAmount: 0
+    changeAmount: 1
+    affectTime: 1
+    changeOutlineColor: 0
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    trailParticleColor: {r: 0.0019062916, g: 0.8113208, b: 0, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 6588731586107017188, guid: 607654a620e93fa4cb0471a3e33b988e, type: 3}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Wasp Nest
+    type: 4
+    prefab: {fileID: 7276135946781963066, guid: ea2979589b8445743903528a598b126d, type: 3}
+    statue: 1
+    amountConversion: 0
+    multiplyAmount: 0
+    changeAmount: 1
+    affectTime: 1
+    changeOutlineColor: 0
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0.9685757, b: 0, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 0
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 6588731586107017188, guid: 516c3692a16cfe049b47dd8b67609578, type: 3}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 1
+  - title: Heart
+    type: 2
+    prefab: {fileID: 6754660049548919852, guid: fd09e690477fc6640bfc75bcbc6c687f, type: 3}
+    statue: 1
+    amountConversion: 2
+    multiplyAmount: 2
+    changeAmount: 0.85
+    affectTime: 1
+    changeOutlineColor: 1
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0, b: 0.008334637, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 1
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 0}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 105942, guid: ff672eaca96d32c419d7a1f1b0346e8d, type: 3}
+    destroyVFXOnEnd: 0
+  - title: TNT
+    type: 2
+    prefab: {fileID: 6264523050596541386, guid: 888a18f27f3cb644bb1bc48ca3cd2cc5, type: 3}
+    statue: 1
+    amountConversion: 2
+    multiplyAmount: 2
+    changeAmount: 1.3
+    affectTime: 1
+    changeOutlineColor: 0
+    positiveOutline: {r: 0, g: 1, b: 0, a: 1}
+    trailParticleColor: {r: 1, g: 0, b: 0.008334637, a: 1}
+    changeSize: 0
+    changeSizeAmount: 0
+    shakeOnAffection: 1
+    shakeStrength: 3.5
+    shakeVibrato: 15
+    headVFX: {fileID: 180860, guid: 89fdb9fee1f1fe94cb02018221255e50, type: 3}
+    rightHandVFX: {fileID: 0}
+    leftHandVFX: {fileID: 0}
+    bodyVFX: {fileID: 0}
+    destroyVFXOnEnd: 0
   trailParticle: {fileID: 1113972268356879538, guid: a6505f77f7fb7e4468eeb7b8364c305c, type: 3}
   itemParticleLerpSpeed: 15
   positiveItemColor: {r: 0, g: 1, b: 0, a: 1}

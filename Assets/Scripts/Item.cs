@@ -1,10 +1,8 @@
-using System.Linq;
 using UnityEngine;
 using TMPro;
 
 public class Item : MonoBehaviour
 {
-    public ItemType itemType;
     public TextMeshPro amountText;
 
     private Monster _alliedMonster;
@@ -64,35 +62,16 @@ public class Item : MonoBehaviour
 
     public void OnTrigger()
     {
-        switch (itemType)
-        {
-            case ItemType.Power:
-                _alliedMonster.PowerAffection(this);
-                break;
-            case ItemType.AttackSpeed:
-                _alliedMonster.AttackSpeedAffection(this);
-                break;
-            case ItemType.Health:
-                _alliedMonster.ChangeHealth(this);
-                break;
-            case ItemType.Shield:
-                _alliedMonster.ChangeShield(this);
-                break;
-            case ItemType.Poop:
-                _alliedMonster.PoopAffection(this);
-                break;
-            default:
-                break;
-        }
+        _alliedMonster.PowerUpAffection(this);
     }
 
     public void SetupItem(ItemSpawnPoint itemSpawn, ControlPanel.ItemClass itemClass)
     {
         amountText.text = itemSpawn.GetOperatorText();
-        ChangeAmount = itemSpawn.changeAmount;
-        Multiplier = itemSpawn.multiplyAmount;
-        Operator = itemSpawn.amountConversion;
-        Statue = itemSpawn.statue;
+        ChangeAmount = itemClass.changeAmount;
+        Multiplier = itemClass.multiplyAmount;
+        Operator = itemClass.amountConversion;
+        Statue = itemClass.statue;
 
         if (_spriteRenderer == null)
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -110,21 +89,5 @@ public class Item : MonoBehaviour
         _spriteRenderer.gameObject.SetActive(itemSpawn.amountTextVisibility == Visibility.Show ? true : false);
 
         ItemClass = itemClass;
-    }
-
-    public GameObject GetVFX()
-    {
-        return ItemClass.particleVFX;
-    }
-
-    public Color GetOutlineColor()
-    {
-        if (Statue == ItemStatue.Positive)
-            return ItemClass.positiveOutline;
-
-        if (Statue == ItemStatue.Negative)
-            return ItemClass.negativeOutline;
-
-        return Color.white;
     }
 }
